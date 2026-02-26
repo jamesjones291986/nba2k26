@@ -1,0 +1,178 @@
+{
+  "id": 7,
+  "name": "SG Extreme Shooter",
+  "position": "SG",
+  "height": 75,
+  "weight": 200,
+  "wingspan": 76,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 92,
+    "Standing Dunk": 50,
+    "Post Control": 80,
+    "Mid-Range Shot": 99,
+    "Three-Point Shot": 98,
+    "Free Throw": 99,
+    "Pass Accuracy": 99,
+    "Ball Handle": 97,
+    "Speed With Ball": 91,
+    "Interior Defense": 74,
+    "Perimeter Defense": 98,
+    "Steal": 95,
+    "Block": 60,
+    "Offensive Rebound": 63,
+    "Defensive Rebound": 63,
+    "Speed": 97,
+    "Agility": 95,
+    "Strength": 78,
+    "Vertical": 99
+  },
+  "chosen": {
+    "Close Shot": 84,
+    "Driving Layup": 76,
+    "Driving Dunk": 25,
+    "Standing Dunk": 25,
+    "Post Control": 36,
+    "Mid-Range Shot": 99,
+    "Three-Point Shot": 98,
+    "Free Throw": 99,
+    "Pass Accuracy": 66,
+    "Ball Handle": 91,
+    "Speed With Ball": 81,
+    "Interior Defense": 25,
+    "Perimeter Defense": 55,
+    "Steal": 27,
+    "Block": 25,
+    "Offensive Rebound": 25,
+    "Defensive Rebound": 25,
+    "Speed": 81,
+    "Agility": 66,
+    "Strength": 26,
+    "Vertical": 51
+  },
+  "cb_steps": {
+    "Close Shot": [
+      86,
+      88,
+      90,
+      92,
+      94
+    ],
+    "Driving Layup": [
+      78,
+      80,
+      82,
+      84,
+      85
+    ],
+    "Driving Dunk": [
+      38,
+      49,
+      58,
+      66,
+      73
+    ],
+    "Standing Dunk": [
+      40,
+      50
+    ],
+    "Post Control": [
+      48,
+      58,
+      66,
+      73,
+      79
+    ],
+    "Mid-Range Shot": [],
+    "Three-Point Shot": [],
+    "Free Throw": [],
+    "Pass Accuracy": [
+      70,
+      73,
+      76,
+      79,
+      81
+    ],
+    "Ball Handle": [
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "Speed With Ball": [
+      82,
+      83,
+      84,
+      85,
+      86
+    ],
+    "Interior Defense": [
+      39,
+      51,
+      61,
+      69,
+      74
+    ],
+    "Perimeter Defense": [
+      60,
+      65,
+      69,
+      73,
+      76
+    ],
+    "Steal": [
+      38,
+      48,
+      56,
+      64,
+      70
+    ],
+    "Block": [
+      40,
+      53,
+      60
+    ],
+    "Offensive Rebound": [
+      39,
+      51,
+      61,
+      63
+    ],
+    "Defensive Rebound": [
+      38,
+      49,
+      58,
+      63
+    ],
+    "Speed": [
+      82,
+      83,
+      84,
+      85,
+      86
+    ],
+    "Agility": [
+      69,
+      72,
+      75,
+      78,
+      80
+    ],
+    "Strength": [
+      40,
+      52,
+      61,
+      69,
+      75
+    ],
+    "Vertical": [
+      57,
+      62,
+      66,
+      70,
+      74
+    ]
+  }
+}

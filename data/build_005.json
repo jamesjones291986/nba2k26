@@ -1,0 +1,154 @@
+{
+  "id": 5,
+  "name": "C Max Height",
+  "position": "C",
+  "height": 86,
+  "weight": 290,
+  "wingspan": 92,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 71,
+    "Driving Dunk": 70,
+    "Standing Dunk": 99,
+    "Post Control": 99,
+    "Mid-Range Shot": 78,
+    "Three-Point Shot": 77,
+    "Free Throw": 90,
+    "Pass Accuracy": 99,
+    "Ball Handle": 54,
+    "Speed With Ball": 38,
+    "Interior Defense": 99,
+    "Perimeter Defense": 55,
+    "Steal": 63,
+    "Block": 99,
+    "Offensive Rebound": 99,
+    "Defensive Rebound": 99,
+    "Speed": 45,
+    "Agility": 33,
+    "Strength": 99,
+    "Vertical": 67
+  },
+  "chosen": {
+    "Close Shot": 69,
+    "Driving Layup": 50,
+    "Driving Dunk": 70,
+    "Standing Dunk": 67,
+    "Post Control": 74,
+    "Mid-Range Shot": 29,
+    "Three-Point Shot": 25,
+    "Free Throw": 30,
+    "Pass Accuracy": 25,
+    "Ball Handle": 30,
+    "Speed With Ball": 25,
+    "Interior Defense": 94,
+    "Perimeter Defense": 44,
+    "Steal": 49,
+    "Block": 96,
+    "Offensive Rebound": 74,
+    "Defensive Rebound": 99,
+    "Speed": 45,
+    "Agility": 33,
+    "Strength": 99,
+    "Vertical": 67
+  },
+  "cb_steps": {
+    "Close Shot": [
+      72,
+      75,
+      78,
+      80,
+      82
+    ],
+    "Driving Layup": [
+      59,
+      66,
+      71
+    ],
+    "Driving Dunk": [],
+    "Standing Dunk": [
+      68,
+      69,
+      70,
+      71,
+      72
+    ],
+    "Post Control": [
+      78,
+      82,
+      86,
+      89,
+      91
+    ],
+    "Mid-Range Shot": [
+      41,
+      50,
+      59,
+      66,
+      72
+    ],
+    "Three-Point Shot": [
+      38,
+      49,
+      58,
+      66,
+      73
+    ],
+    "Free Throw": [
+      44,
+      55,
+      64,
+      71,
+      77
+    ],
+    "Pass Accuracy": [
+      34,
+      42,
+      49,
+      55,
+      61
+    ],
+    "Ball Handle": [
+      42,
+      51,
+      54
+    ],
+    "Speed With Ball": [
+      38
+    ],
+    "Interior Defense": [
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "Perimeter Defense": [
+      50,
+      55
+    ],
+    "Steal": [
+      53,
+      56,
+      59,
+      62,
+      63
+    ],
+    "Block": [
+      97,
+      98,
+      99
+    ],
+    "Offensive Rebound": [
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "Defensive Rebound": [],
+    "Speed": [],
+    "Agility": [],
+    "Strength": [],
+    "Vertical": []
+  }
+}
