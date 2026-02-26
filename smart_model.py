@@ -1,33 +1,28 @@
 #!/usr/bin/env python3
-"""Smarter cap breaker prediction model.
+"""Cap breaker prediction model v2.
 
-Key insights from data:
-1. 1-4 step attributes: gain = gap (always full recovery, hits builder cap)
-2. 5-step attributes: gain is throttled based on builder_cap
-3. Higher builder_cap = more throttling (game expects you to invest)
-4. Per-step gains decrease (step 1 biggest, step 5 smallest)
-5. Lower chosen value = bigger per-step gains (but still throttled)
+Formula: CB_gain = f(gap, builder_cap) + attribute_bias
+
+Key findings:
+- 1-4 step attributes: gain = gap (always full recovery to builder cap)
+- 5-step attributes: gain = base_model(gap, cap) + per_attribute_correction
+- Other attribute allocations have ZERO effect on CB gain
+- Only chosen value and builder cap matter
 """
+import json
+import os
 import numpy as np
-from scipy.optimize import minimize
-from models import load_all_builds
+from models import load_all_builds, DATA_DIR
 from analyze import extract_features
+from collections import defaultdict
+
+MODEL_PATH = os.path.join(DATA_DIR, "cb_model_v2.json")
 
 
 def predict_num_steps(gap, builder_cap):
-    """Predict number of cap breaker steps.
-    
-    From data: low gap or low cap = fewer steps.
-    Steps 1-4 always give full recovery.
-    Step 5 is where throttling happens.
-    """
+    """Predict number of cap breaker steps from observed patterns."""
     if gap == 0:
         return 0
-    # From observed data patterns:
-    # The game seems to give enough steps to cover the gap if possible,
-    # but caps at 5. Low-cap attributes get fewer steps because
-    # fewer steps can already cover the full gap.
-    # Rough thresholds from data:
     if gap <= 5 and builder_cap <= 80:
         return 1
     if gap <= 13 and builder_cap <= 65:
@@ -49,215 +44,221 @@ def predict_num_steps(gap, builder_cap):
     return 5
 
 
-def predict_gain_simple(gap, builder_cap, chosen):
-    """Simple model: predict total CB gain.
-    
-    For non-5-step: gain = gap (full recovery)
-    For 5-step: gain depends on builder_cap and gap
-    """
-    steps = predict_num_steps(gap, builder_cap)
-    if steps == 0:
-        return 0
-    if steps < 5:
-        return gap  # Full recovery
-
-    # 5-step throttled model
-    # From data: recovery_ratio correlates with builder_cap (-0.51)
-    # and weakly with gap_pct
-    # Use a piecewise approach based on builder_cap
-    gap_pct = gap / builder_cap if builder_cap > 0 else 0
-
-    # Base recovery from gap_pct (quadratic fit from data)
-    base_gain = 45.4 * gap_pct ** 2 + 29.4 * gap_pct + 2.4
-
-    # Throttle based on builder_cap
-    # Higher cap = more throttle
-    if builder_cap >= 96:
-        throttle = 0.85
-    elif builder_cap >= 90:
-        throttle = 0.95
-    elif builder_cap >= 80:
-        throttle = 1.0
-    else:
-        throttle = 1.05
-
-    gain = base_gain * throttle
-    return min(round(gain), gap)  # Can't exceed gap
-
-
-class CBModel:
-    """Fitted cap breaker model using per-step regression."""
-
+class CBModelV2:
     def __init__(self):
-        self.step_models = []  # coefficients for each step
+        self.base_coeffs = None  # [intercept, gap, cap_norm, gap*cap_norm]
+        self.attr_bias = {}
+        self.step_coeffs = []
         self.fitted = False
 
-    def fit(self, rows):
-        """Fit per-step gain models from data."""
+    def fit(self, builds=None):
+        if builds is None:
+            builds = load_all_builds()
+        rows = extract_features(builds)
         five = [r for r in rows if r['num_steps'] == 5 and r['gap'] > 0]
-        if len(five) < 10:
+        if len(five) < 20:
+            print(f"Only {len(five)} 5-step points, need at least 20")
             return
 
-        self.step_models = []
+        y = np.array([r['total_gain'] for r in five])
+        gap = np.array([r['gap'] for r in five])
+        cap_norm = np.array([r['builder_cap'] / 99 for r in five])
+
+        # Base model: gain = a + b*gap + c*cap_norm + d*gap*cap_norm
+        X = np.column_stack([np.ones(len(y)), gap, cap_norm, gap * cap_norm])
+        self.base_coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
+
+        # Per-attribute bias
+        base_pred = X @ self.base_coeffs
+        residuals = y - base_pred
+        by_attr = defaultdict(list)
+        for i, r in enumerate(five):
+            by_attr[r['attr']].append(residuals[i])
+        self.attr_bias = {attr: float(np.mean(resids)) for attr, resids in by_attr.items()}
+
+        # Per-step models
+        self.step_coeffs = []
         for step in range(5):
             gains = []
-            features = []
+            feats = []
             for r in five:
                 if len(r['gains']) > step:
                     gains.append(r['gains'][step])
-                    features.append([
-                        r['gap_pct'],
-                        r['gap_pct'] ** 2,
-                        r['builder_cap'] / 99,
-                        r['chosen'] / 99,
-                        (r['builder_cap'] / 99) * r['gap_pct'],  # interaction
-                    ])
-            if len(gains) < 5:
-                break
-
-            X = np.column_stack([np.ones(len(gains)), np.array(features)])
-            y = np.array(gains)
-            coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
-            self.step_models.append(coeffs)
+                    gp = r['gap_pct']
+                    cn = r['builder_cap'] / 99
+                    bias = self.attr_bias.get(r['attr'], 0) / 5  # spread bias across steps
+                    feats.append([gp, gp**2, cn, bias])
+            if len(gains) >= 10:
+                Xs = np.column_stack([np.ones(len(gains)), np.array(feats)])
+                ys = np.array(gains)
+                sc, _, _, _ = np.linalg.lstsq(Xs, ys, rcond=None)
+                self.step_coeffs.append(sc.tolist())
 
         self.fitted = True
 
-    def predict_steps(self, gap, builder_cap, chosen):
-        """Predict per-step gains."""
-        if gap == 0:
-            return []
-
+    def predict_total(self, chosen, builder_cap, attr_name=None):
+        gap = builder_cap - chosen
+        if gap <= 0:
+            return 0
         n_steps = predict_num_steps(gap, builder_cap)
         if n_steps < 5:
-            # Full recovery, distribute across steps (decreasing)
-            if n_steps == 1:
-                return [gap]
-            # Rough distribution: each step is ~60-80% of previous
-            weights = [0.8 ** i for i in range(n_steps)]
-            total_w = sum(weights)
-            steps = [max(1, round(gap * w / total_w)) for w in weights]
-            # Adjust to hit exact gap
-            diff = gap - sum(steps)
-            for i in range(abs(diff)):
-                if diff > 0:
-                    steps[i % n_steps] += 1
-                elif diff < 0:
-                    steps[-(i % n_steps) - 1] = max(1, steps[-(i % n_steps) - 1] - 1)
-            return steps
+            return gap
 
         if not self.fitted:
-            # Fallback
-            gain = predict_gain_simple(gap, builder_cap, chosen)
-            per = max(1, gain // 5)
+            return gap  # fallback
+
+        cap_norm = builder_cap / 99
+        x = np.array([1, gap, cap_norm, gap * cap_norm])
+        base = x @ self.base_coeffs
+        bias = self.attr_bias.get(attr_name, 0) if attr_name else 0
+        gain = max(1, round(base + bias))
+        return min(gain, gap)
+
+    def predict_steps(self, chosen, builder_cap, attr_name=None):
+        gap = builder_cap - chosen
+        if gap <= 0:
+            return []
+        n_steps = predict_num_steps(gap, builder_cap)
+
+        if n_steps < 5:
+            # Full recovery, distribute decreasingly
+            if n_steps == 1:
+                return [gap]
+            weights = [0.75 ** i for i in range(n_steps)]
+            total_w = sum(weights)
+            steps = [max(1, round(gap * w / total_w)) for w in weights]
+            diff = gap - sum(steps)
+            for i in range(abs(diff)):
+                idx = i % n_steps
+                steps[idx] += 1 if diff > 0 else -1
+                steps[idx] = max(1, steps[idx])
+            return steps
+
+        if not self.fitted or not self.step_coeffs:
+            total = self.predict_total(chosen, builder_cap, attr_name)
+            per = max(1, total // 5)
             return [per] * 5
 
-        # Use fitted per-step models
-        gap_pct = gap / builder_cap if builder_cap > 0 else 0
-        feats = [
-            gap_pct,
-            gap_pct ** 2,
-            builder_cap / 99,
-            chosen / 99,
-            (builder_cap / 99) * gap_pct,
-        ]
-        x = np.array([1] + feats)
+        gap_pct = gap / builder_cap
+        cap_norm = builder_cap / 99
+        bias = (self.attr_bias.get(attr_name, 0) / 5) if attr_name else 0
 
         gains = []
-        for coeffs in self.step_models:
-            g = max(1, round(x @ coeffs))
+        for sc in self.step_coeffs:
+            x = np.array([1, gap_pct, gap_pct**2, cap_norm, bias])
+            g = max(1, round(x @ np.array(sc)))
             gains.append(g)
 
-        # Ensure gains are decreasing
+        # Ensure decreasing
         for i in range(1, len(gains)):
-            gains[i] = min(gains[i], gains[i - 1])
+            gains[i] = min(gains[i], gains[i-1])
 
-        # Cap total at gap
-        total = sum(gains)
-        if total > gap:
-            gains = [max(1, round(g * gap / total)) for g in gains]
+        # Adjust to match predicted total
+        total = self.predict_total(chosen, builder_cap, attr_name)
+        current_total = sum(gains)
+        if current_total > 0 and current_total != total:
+            ratio = total / current_total
+            gains = [max(1, round(g * ratio)) for g in gains]
+            # Fine-tune
+            diff = total - sum(gains)
+            for i in range(abs(diff)):
+                idx = i % 5
+                gains[idx] += 1 if diff > 0 else -1
+                gains[idx] = max(1, gains[idx])
 
         return gains
 
-    def predict_total(self, gap, builder_cap, chosen):
-        """Predict total CB gain."""
-        return sum(self.predict_steps(gap, builder_cap, chosen))
-
     def evaluate(self, rows):
-        """Evaluate model on data."""
         errors = []
-        step_errors = []
         for r in rows:
             if r['gap'] == 0:
                 continue
-            pred_total = self.predict_total(r['gap'], r['builder_cap'], r['chosen'])
-            actual_total = r['total_gain']
-            errors.append(abs(pred_total - actual_total))
-
-            # Per-step errors
-            pred_steps = self.predict_steps(r['gap'], r['builder_cap'], r['chosen'])
-            for i, (pg, ag) in enumerate(zip(pred_steps, r['gains'])):
-                step_errors.append(abs(pg - ag))
-
-        mae = np.mean(errors) if errors else 0
-        within3 = sum(1 for e in errors if e <= 3) / len(errors) * 100 if errors else 0
-        within5 = sum(1 for e in errors if e <= 5) / len(errors) * 100 if errors else 0
-        step_mae = np.mean(step_errors) if step_errors else 0
-
+            pred = self.predict_total(r['chosen'], r['builder_cap'], r['attr'])
+            errors.append(abs(pred - r['total_gain']))
+        if not errors:
+            return {}
         return {
-            'mae': mae, 'within3': within3, 'within5': within5,
-            'step_mae': step_mae, 'n': len(errors),
+            'mae': np.mean(errors),
+            'within3': sum(1 for e in errors if e <= 3) / len(errors) * 100,
+            'within5': sum(1 for e in errors if e <= 5) / len(errors) * 100,
+            'n': len(errors),
         }
 
+    def save(self):
+        os.makedirs(DATA_DIR, exist_ok=True)
+        data = {
+            'base_coeffs': self.base_coeffs.tolist() if self.base_coeffs is not None else None,
+            'attr_bias': self.attr_bias,
+            'step_coeffs': self.step_coeffs,
+        }
+        with open(MODEL_PATH, 'w') as f:
+            json.dump(data, f, indent=2)
 
-def train_and_evaluate():
+    def load(self):
+        with open(MODEL_PATH) as f:
+            data = json.load(f)
+        self.base_coeffs = np.array(data['base_coeffs'])
+        self.attr_bias = data['attr_bias']
+        self.step_coeffs = data['step_coeffs']
+        self.fitted = True
+
+
+def train_and_test():
     builds = load_all_builds()
     rows = extract_features(builds)
     non_maxed = [r for r in rows if r['gap'] > 0]
 
-    # Train on builds 1-12, test on 13-14
-    train = [r for r in non_maxed if r['build_id'] <= 12]
-    test = [r for r in non_maxed if r['build_id'] > 12]
+    # Train on 1-15, test on 16-17
+    train_builds = [b for b in builds if b.id <= 15]
+    test_rows = [r for r in non_maxed if r['build_id'] > 15]
+    train_rows = [r for r in non_maxed if r['build_id'] <= 15]
 
-    model = CBModel()
-    model.fit(train)
+    model = CBModelV2()
+    model.fit(train_builds)
 
     print("=" * 60)
-    print("SMART CAP BREAKER MODEL")
+    print("CAP BREAKER MODEL V2 (with per-attribute correction)")
     print("=" * 60)
 
-    train_eval = model.evaluate(train)
-    test_eval = model.evaluate(test)
+    print(f"\nBase formula: gain = {model.base_coeffs[0]:.2f} "
+          f"+ {model.base_coeffs[1]:.4f}*gap "
+          f"+ {model.base_coeffs[2]:.2f}*(cap/99) "
+          f"+ {model.base_coeffs[3]:.4f}*gap*(cap/99)")
 
-    print(f"\nTraining ({train_eval['n']} points):")
-    print(f"  MAE: {train_eval['mae']:.1f}")
-    print(f"  Within 3: {train_eval['within3']:.0f}%")
-    print(f"  Within 5: {train_eval['within5']:.0f}%")
-    print(f"  Per-step MAE: {train_eval['step_mae']:.1f}")
+    print(f"\nPer-attribute corrections:")
+    for attr, bias in sorted(model.attr_bias.items(), key=lambda x: x[1]):
+        label = "STINGY" if bias < -3 else "GENEROUS" if bias > 3 else ""
+        print(f"  {attr:<20}: {bias:>+6.1f}  {label}")
 
-    print(f"\nTest ({test_eval['n']} points):")
-    print(f"  MAE: {test_eval['mae']:.1f}")
-    print(f"  Within 3: {test_eval['within3']:.0f}%")
-    print(f"  Within 5: {test_eval['within5']:.0f}%")
-    print(f"  Per-step MAE: {test_eval['step_mae']:.1f}")
+    train_eval = model.evaluate(train_rows)
+    test_eval = model.evaluate(test_rows)
+
+    print(f"\nTraining ({train_eval['n']} pts): MAE={train_eval['mae']:.1f}, "
+          f"within 3={train_eval['within3']:.0f}%, within 5={train_eval['within5']:.0f}%")
+    print(f"Test ({test_eval['n']} pts): MAE={test_eval['mae']:.1f}, "
+          f"within 3={test_eval['within3']:.0f}%, within 5={test_eval['within5']:.0f}%")
 
     # Show test predictions
-    print(f"\n{'Attribute':<20} {'Gap':>5} {'Actual':>7} {'Pred':>7} {'Error':>7}")
-    print("-" * 50)
-    for r in test:
-        pred = model.predict_total(r['gap'], r['builder_cap'], r['chosen'])
+    print(f"\n{'Attribute':<20} {'Cap':>4} {'Cho':>4} {'Gap':>4} {'Actual':>7} {'Pred':>6} {'Err':>5}")
+    print("-" * 55)
+    for r in test_rows:
+        pred = model.predict_total(r['chosen'], r['builder_cap'], r['attr'])
         err = pred - r['total_gain']
         marker = ' OK' if abs(err) <= 3 else ''
-        print(f"{r['attr']:<20} {r['gap']:>5} {r['total_gain']:>7} {pred:>7} {err:>+7}{marker}")
+        print(f"{r['attr']:<20} {r['builder_cap']:>4} {r['chosen']:>4} {r['gap']:>4} "
+              f"{r['total_gain']:>7} {pred:>6} {err:>+5}{marker}")
 
-    # Full model evaluation
-    print(f"\nFull dataset ({len(non_maxed)} points):")
-    full_eval = model.evaluate(non_maxed)
-    print(f"  MAE: {full_eval['mae']:.1f}")
-    print(f"  Within 3: {full_eval['within3']:.0f}%")
-    print(f"  Within 5: {full_eval['within5']:.0f}%")
+    # Full dataset
+    model_full = CBModelV2()
+    model_full.fit(builds)
+    full_eval = model_full.evaluate(non_maxed)
+    print(f"\nFull model ({full_eval['n']} pts): MAE={full_eval['mae']:.1f}, "
+          f"within 3={full_eval['within3']:.0f}%, within 5={full_eval['within5']:.0f}%")
 
-    return model
+    model_full.save()
+    print(f"\nModel saved to {MODEL_PATH}")
+    return model_full
 
 
 if __name__ == "__main__":
-    train_and_evaluate()
+    train_and_test()
