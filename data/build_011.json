@@ -1,0 +1,179 @@
+{
+  "id": 11,
+  "name": "PG Big Slasher",
+  "position": "PG",
+  "height": 77,
+  "weight": 220,
+  "wingspan": 83,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 99,
+    "Standing Dunk": 71,
+    "Post Control": 90,
+    "Mid-Range Shot": 90,
+    "Three-Point Shot": 87,
+    "Free Throw": 99,
+    "Pass Accuracy": 99,
+    "Ball Handle": 95,
+    "Speed With Ball": 88,
+    "Interior Defense": 82,
+    "Perimeter Defense": 99,
+    "Steal": 99,
+    "Block": 72,
+    "Offensive Rebound": 79,
+    "Defensive Rebound": 81,
+    "Speed": 95,
+    "Agility": 91,
+    "Strength": 83,
+    "Vertical": 98
+  },
+  "chosen": {
+    "Close Shot": 79,
+    "Driving Layup": 79,
+    "Driving Dunk": 99,
+    "Standing Dunk": 44,
+    "Post Control": 34,
+    "Mid-Range Shot": 39,
+    "Three-Point Shot": 25,
+    "Free Throw": 41,
+    "Pass Accuracy": 59,
+    "Ball Handle": 84,
+    "Speed With Ball": 64,
+    "Interior Defense": 76,
+    "Perimeter Defense": 99,
+    "Steal": 99,
+    "Block": 49,
+    "Offensive Rebound": 34,
+    "Defensive Rebound": 59,
+    "Speed": 74,
+    "Agility": 84,
+    "Strength": 59,
+    "Vertical": 79
+  },
+  "cb_steps": {
+    "Close Shot": [
+      82,
+      85,
+      87,
+      89,
+      91
+    ],
+    "Driving Layup": [
+      82,
+      85,
+      87,
+      89,
+      91
+    ],
+    "Driving Dunk": [],
+    "Standing Dunk": [
+      55,
+      64,
+      71
+    ],
+    "Post Control": [
+      47,
+      57,
+      65,
+      72,
+      79
+    ],
+    "Mid-Range Shot": [
+      43,
+      47,
+      50,
+      53,
+      56
+    ],
+    "Three-Point Shot": [
+      29,
+      33,
+      37,
+      41,
+      44
+    ],
+    "Free Throw": [
+      52,
+      61,
+      69,
+      75,
+      81
+    ],
+    "Pass Accuracy": [
+      64,
+      68,
+      72,
+      76,
+      79
+    ],
+    "Ball Handle": [
+      86,
+      88,
+      90,
+      91,
+      92
+    ],
+    "Speed With Ball": [
+      68,
+      72,
+      76,
+      79,
+      82
+    ],
+    "Interior Defense": [
+      80,
+      82
+    ],
+    "Perimeter Defense": [],
+    "Steal": [],
+    "Block": [
+      57,
+      63,
+      69,
+      72
+    ],
+    "Offensive Rebound": [
+      47,
+      57,
+      65,
+      72,
+      79
+    ],
+    "Defensive Rebound": [
+      64,
+      68,
+      72,
+      76,
+      79
+    ],
+    "Speed": [
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "Agility": [
+      85,
+      86,
+      87,
+      88,
+      89
+    ],
+    "Strength": [
+      63,
+      67,
+      71,
+      74,
+      77
+    ],
+    "Vertical": [
+      81,
+      83,
+      85,
+      87,
+      89
+    ]
+  }
+}

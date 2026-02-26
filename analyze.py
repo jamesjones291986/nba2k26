@@ -2,7 +2,7 @@
 """Analyze collected cap breaker data to discover the formula."""
 import numpy as np
 from scipy import stats
-from itertools import combinations
+from collections import defaultdict
 from constants import ALL_ATTRIBUTES, ATTRIBUTES, POSITIONS
 from models import load_all_builds
 
@@ -16,7 +16,6 @@ def extract_features(builds):
             steps = b.cb_steps.get(attr, [])
             if not steps or all(s == 0 for s in steps):
                 continue
-            # Find which category this attribute belongs to
             cat_idx = 0
             for i, (cat, attrs) in enumerate(ATTRIBUTES.items()):
                 if attr in attrs:
@@ -31,13 +30,18 @@ def extract_features(builds):
 
             rows.append({
                 "build_id": b.id, "attr": attr, "cat_idx": cat_idx,
-                "pos_idx": pos_idx, "height": b.height, "weight": b.weight,
-                "wingspan": b.wingspan, "chosen": chosen, "builder_cap": cap,
-                "gap": gap, "gap_pct": gap / max(cap, 1),
+                "pos_idx": pos_idx, "position": b.position,
+                "height": b.height, "weight": b.weight, "wingspan": b.wingspan,
+                "chosen": chosen, "builder_cap": cap,
+                "gap": gap,
+                "gap_pct": gap / max(cap, 1),
                 "chosen_pct": chosen / max(cap, 1),
-                "total_gain": total_gain, "final_value": steps[-1],
+                "total_gain": total_gain,
+                "recovery_ratio": total_gain / gap if gap > 0 else 1.0,
+                "final_value": steps[-1],
                 "gains": gains, "steps": steps,
                 "num_steps": len(steps),
+                "full_recovery": abs(total_gain - gap) < 1,
             })
     return rows
 
@@ -49,7 +53,7 @@ def correlation_analysis(rows):
         return
 
     features = ["chosen", "builder_cap", "gap", "gap_pct", "chosen_pct",
-                 "height", "weight", "wingspan", "pos_idx", "cat_idx"]
+                 "height", "weight", "wingspan", "pos_idx", "cat_idx", "num_steps"]
     target = np.array([r["total_gain"] for r in rows])
 
     print("\n" + "=" * 60)
@@ -169,9 +173,137 @@ def per_step_analysis(rows):
         print(f"\n  Step {step_num+1}: n={len(gains_arr)}, "
               f"mean={gains_arr.mean():.2f}, std={gains_arr.std():.2f}, "
               f"min={gains_arr.min()}, max={gains_arr.max()}")
-        # Correlation with chosen value
         pr, _ = stats.pearsonr(np.array(chosens), gains_arr)
         print(f"    Correlation with chosen value: r={pr:.4f}")
+
+
+def step_count_analysis(rows):
+    """Analyze what determines the number of cap breaker steps."""
+    print("\n" + "=" * 60)
+    print("STEP COUNT ANALYSIS")
+    print("=" * 60)
+    print("What determines how many CB steps an attribute gets?\n")
+
+    by_steps = defaultdict(list)
+    for r in rows:
+        by_steps[r["num_steps"]].append(r)
+
+    for n in sorted(by_steps.keys()):
+        group = by_steps[n]
+        caps = [r["builder_cap"] for r in group]
+        gaps = [r["gap"] for r in group]
+        chosens = [r["chosen"] for r in group]
+        recoveries = [r["recovery_ratio"] for r in group]
+        full = sum(1 for r in group if r["full_recovery"])
+        print(f"  {n} steps: n={len(group)}, full_recovery={full}/{len(group)}")
+        print(f"    Cap range: {min(caps)}-{max(caps)}, mean={np.mean(caps):.0f}")
+        print(f"    Gap range: {min(gaps)}-{max(gaps)}, mean={np.mean(gaps):.0f}")
+        print(f"    Chosen range: {min(chosens)}-{max(chosens)}, mean={np.mean(chosens):.0f}")
+        print(f"    Avg recovery: {np.mean(recoveries):.2f}")
+
+
+def position_expectation_analysis(rows):
+    """Analyze how 'position expectation' affects CB recovery.
+
+    Theory: if a position is expected to have an attribute (high builder cap),
+    leaving it low results in poor CB recovery. Unexpected attributes get
+    generous recovery.
+    """
+    print("\n" + "=" * 60)
+    print("POSITION EXPECTATION ANALYSIS")
+    print("=" * 60)
+    print("Theory: high cap = game expects you to invest there.")
+    print("Leaving expected attributes low = poor CB recovery.\n")
+
+    # Only look at 5-step attributes with meaningful gaps
+    five_step = [r for r in rows if r["num_steps"] == 5 and r["gap"] >= 8]
+    if len(five_step) < 5:
+        print("Not enough 5-step data points.")
+        return
+
+    # Bucket by builder cap ranges
+    print("--- Recovery ratio by builder cap range (5-step, gap >= 8) ---")
+    buckets = [(60, 79, "Low cap (60-79)"),
+               (80, 89, "Mid cap (80-89)"),
+               (90, 95, "High cap (90-95)"),
+               (96, 99, "Very high cap (96-99)")]
+
+    for lo, hi, label in buckets:
+        group = [r for r in five_step if lo <= r["builder_cap"] <= hi]
+        if not group:
+            continue
+        ratios = [r["recovery_ratio"] for r in group]
+        full = sum(1 for r in group if r["full_recovery"])
+        print(f"\n  {label}: n={len(group)}, full={full}/{len(group)}")
+        print(f"    Avg recovery: {np.mean(ratios):.2f}")
+        print(f"    Recovery range: {min(ratios):.2f} - {max(ratios):.2f}")
+
+    # Compare same attribute across different builds
+    print("\n--- Same attribute, different builds (5-step, gap >= 8) ---")
+    by_attr = defaultdict(list)
+    for r in five_step:
+        by_attr[r["attr"]].append(r)
+
+    for attr in sorted(by_attr.keys()):
+        group = by_attr[attr]
+        if len(group) < 2:
+            continue
+        print(f"\n  {attr}:")
+        for r in sorted(group, key=lambda x: x["builder_cap"]):
+            print(f"    Build #{r['build_id']:>2} ({r['position']} {r['height']}in): "
+                  f"cap={r['builder_cap']}, chosen={r['chosen']}, gap={r['gap']}, "
+                  f"gain={r['total_gain']}, ratio={r['recovery_ratio']:.2f}")
+
+    # Correlation: builder_cap vs recovery_ratio for 5-step attributes
+    caps = np.array([r["builder_cap"] for r in five_step])
+    ratios = np.array([r["recovery_ratio"] for r in five_step])
+    gaps = np.array([r["gap"] for r in five_step])
+    chosens = np.array([r["chosen"] for r in five_step])
+    gap_pcts = np.array([r["gap_pct"] for r in five_step])
+
+    print("\n--- Correlation with recovery ratio (5-step, gap >= 8) ---")
+    for name, vals in [("builder_cap", caps), ("gap", gaps), ("chosen", chosens), ("gap_pct", gap_pcts)]:
+        pr, pp = stats.pearsonr(vals, ratios)
+        print(f"  {name:<15}: r={pr:.4f}, p={pp:.4f}")
+
+
+def full_recovery_analysis(rows):
+    """Analyze when full gap recovery occurs vs partial."""
+    print("\n" + "=" * 60)
+    print("FULL vs PARTIAL RECOVERY ANALYSIS")
+    print("=" * 60)
+
+    non_maxed = [r for r in rows if r["gap"] > 0]
+    full = [r for r in non_maxed if r["full_recovery"]]
+    partial = [r for r in non_maxed if not r["full_recovery"]]
+
+    print(f"\n  Total: {len(non_maxed)} attributes with gap > 0")
+    print(f"  Full recovery: {len(full)} ({len(full)/len(non_maxed)*100:.0f}%)")
+    print(f"  Partial recovery: {len(partial)} ({len(partial)/len(non_maxed)*100:.0f}%)")
+
+    if full:
+        print(f"\n  FULL RECOVERY attributes:")
+        print(f"    Gap range: {min(r['gap'] for r in full)}-{max(r['gap'] for r in full)}")
+        print(f"    Cap range: {min(r['builder_cap'] for r in full)}-{max(r['builder_cap'] for r in full)}")
+        print(f"    Chosen range: {min(r['chosen'] for r in full)}-{max(r['chosen'] for r in full)}")
+        print(f"    Steps range: {min(r['num_steps'] for r in full)}-{max(r['num_steps'] for r in full)}")
+
+    if partial:
+        print(f"\n  PARTIAL RECOVERY attributes:")
+        print(f"    Gap range: {min(r['gap'] for r in partial)}-{max(r['gap'] for r in partial)}")
+        print(f"    Cap range: {min(r['builder_cap'] for r in partial)}-{max(r['builder_cap'] for r in partial)}")
+        print(f"    Chosen range: {min(r['chosen'] for r in partial)}-{max(r['chosen'] for r in partial)}")
+        print(f"    Steps range: {min(r['num_steps'] for r in partial)}-{max(r['num_steps'] for r in partial)}")
+
+    # Find the boundary
+    print("\n  --- Boundary analysis (sorted by gap) ---")
+    print(f"  {'Attr':<20} {'Pos':<4} {'Cap':>4} {'Chosen':>7} {'Gap':>5} {'Gain':>6} {'Steps':>6} {'Full':>5}")
+    print("  " + "-" * 60)
+    for r in sorted(non_maxed, key=lambda x: x["gap"]):
+        f = "YES" if r["full_recovery"] else "NO"
+        print(f"  {r['attr']:<20} {r['position']:<4} {r['builder_cap']:>4} "
+              f"{r['chosen']:>7} {r['gap']:>5} {r['total_gain']:>6} "
+              f"{r['num_steps']:>6} {f:>5}")
 
 
 def summary(rows):
@@ -186,10 +318,9 @@ def summary(rows):
     if gains:
         print(f"  Total gain range: {min(gains)} to {max(gains)}")
         print(f"  Mean total gain: {np.mean(gains):.1f}")
-    # Coverage by position
     pos_counts = {}
     for r in rows:
-        p = r["pos_idx"]
+        p = r["position"]
         pos_counts[p] = pos_counts.get(p, 0) + 1
     print(f"  Data points by position: {dict(sorted(pos_counts.items()))}")
 
@@ -209,6 +340,9 @@ def run_analysis():
     correlation_analysis(rows)
     regression_analysis(rows)
     per_step_analysis(rows)
+    step_count_analysis(rows)
+    position_expectation_analysis(rows)
+    full_recovery_analysis(rows)
 
 
 if __name__ == "__main__":
