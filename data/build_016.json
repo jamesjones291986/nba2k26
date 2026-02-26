@@ -1,0 +1,158 @@
+{
+  "id": 16,
+  "name": "SG Finishing/Physical",
+  "position": "SG",
+  "height": 75,
+  "weight": 200,
+  "wingspan": 76,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 92,
+    "Standing Dunk": 50,
+    "Post Control": 80,
+    "Mid-Range Shot": 99,
+    "Three-Point Shot": 98,
+    "Free Throw": 99,
+    "Pass Accuracy": 99,
+    "Ball Handle": 97,
+    "Speed With Ball": 91,
+    "Interior Defense": 74,
+    "Perimeter Defense": 98,
+    "Steal": 95,
+    "Block": 60,
+    "Offensive Rebound": 63,
+    "Defensive Rebound": 63,
+    "Speed": 97,
+    "Agility": 95,
+    "Strength": 78,
+    "Vertical": 99
+  },
+  "chosen": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 92,
+    "Standing Dunk": 50,
+    "Post Control": 80,
+    "Mid-Range Shot": 59,
+    "Three-Point Shot": 39,
+    "Free Throw": 59,
+    "Pass Accuracy": 64,
+    "Ball Handle": 89,
+    "Speed With Ball": 87,
+    "Interior Defense": 25,
+    "Perimeter Defense": 67,
+    "Steal": 47,
+    "Block": 29,
+    "Offensive Rebound": 41,
+    "Defensive Rebound": 47,
+    "Speed": 97,
+    "Agility": 92,
+    "Strength": 54,
+    "Vertical": 72
+  },
+  "cb_steps": {
+    "Close Shot": [],
+    "Driving Layup": [],
+    "Driving Dunk": [],
+    "Standing Dunk": [],
+    "Post Control": [],
+    "Mid-Range Shot": [
+      63,
+      66,
+      69,
+      72,
+      75
+    ],
+    "Three-Point Shot": [
+      47,
+      54,
+      60,
+      66,
+      71
+    ],
+    "Free Throw": [
+      67,
+      74,
+      80,
+      85,
+      89
+    ],
+    "Pass Accuracy": [
+      67,
+      70,
+      72,
+      74,
+      76
+    ],
+    "Ball Handle": [
+      90,
+      91,
+      92,
+      93,
+      94
+    ],
+    "Speed With Ball": [
+      88,
+      89,
+      90,
+      91
+    ],
+    "Interior Defense": [
+      37,
+      48,
+      57,
+      64,
+      71
+    ],
+    "Perimeter Defense": [
+      69,
+      71,
+      73,
+      74,
+      75
+    ],
+    "Steal": [
+      52,
+      56,
+      60,
+      64,
+      67
+    ],
+    "Block": [
+      42,
+      52,
+      60
+    ],
+    "Offensive Rebound": [
+      52,
+      61,
+      63
+    ],
+    "Defensive Rebound": [
+      55,
+      62,
+      63
+    ],
+    "Speed": [],
+    "Agility": [
+      93,
+      94,
+      95
+    ],
+    "Strength": [
+      59,
+      63,
+      67,
+      71,
+      74
+    ],
+    "Vertical": [
+      74,
+      75,
+      76,
+      77,
+      78
+    ]
+  }
+}
