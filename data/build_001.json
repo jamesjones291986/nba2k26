@@ -1,0 +1,146 @@
+{
+  "id": 1,
+  "name": "Main PF Build",
+  "position": "PF",
+  "height": 83,
+  "weight": 210,
+  "wingspan": 83,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 95,
+    "Driving Dunk": 87,
+    "Standing Dunk": 95,
+    "Post Control": 99,
+    "Mid-Range Shot": 94,
+    "Three-Point Shot": 91,
+    "Free Throw": 93,
+    "Pass Accuracy": 99,
+    "Ball Handle": 75,
+    "Speed With Ball": 68,
+    "Interior Defense": 88,
+    "Perimeter Defense": 77,
+    "Steal": 67,
+    "Block": 90,
+    "Offensive Rebound": 78,
+    "Defensive Rebound": 80,
+    "Speed": 79,
+    "Agility": 73,
+    "Strength": 80,
+    "Vertical": 90
+  },
+  "chosen": {
+    "Close Shot": 90,
+    "Driving Layup": 75,
+    "Driving Dunk": 87,
+    "Standing Dunk": 86,
+    "Post Control": 70,
+    "Mid-Range Shot": 90,
+    "Three-Point Shot": 70,
+    "Free Throw": 70,
+    "Pass Accuracy": 91,
+    "Ball Handle": 75,
+    "Speed With Ball": 68,
+    "Interior Defense": 75,
+    "Perimeter Defense": 77,
+    "Steal": 60,
+    "Block": 88,
+    "Offensive Rebound": 70,
+    "Defensive Rebound": 80,
+    "Speed": 79,
+    "Agility": 73,
+    "Strength": 57,
+    "Vertical": 88
+  },
+  "cb_steps": {
+    "Close Shot": [
+      91,
+      92,
+      93,
+      94,
+      95
+    ],
+    "Driving Layup": [
+      77,
+      79,
+      80,
+      81,
+      82
+    ],
+    "Driving Dunk": [],
+    "Standing Dunk": [
+      87,
+      88,
+      89,
+      90,
+      91
+    ],
+    "Post Control": [
+      72,
+      74,
+      76,
+      78,
+      79
+    ],
+    "Mid-Range Shot": [
+      92,
+      94
+    ],
+    "Three-Point Shot": [
+      76,
+      82,
+      87,
+      91
+    ],
+    "Free Throw": [
+      76,
+      81,
+      86,
+      90,
+      93
+    ],
+    "Pass Accuracy": [
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "Ball Handle": [],
+    "Speed With Ball": [],
+    "Interior Defense": [
+      76,
+      77,
+      78,
+      79,
+      80
+    ],
+    "Perimeter Defense": [],
+    "Steal": [
+      67
+    ],
+    "Block": [
+      89,
+      90
+    ],
+    "Offensive Rebound": [
+      72,
+      74,
+      76,
+      78
+    ],
+    "Defensive Rebound": [],
+    "Speed": [],
+    "Agility": [],
+    "Strength": [
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "Vertical": [
+      89,
+      90
+    ]
+  }
+}
