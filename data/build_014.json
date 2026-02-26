@@ -1,0 +1,181 @@
+{
+  "id": 14,
+  "name": "PF Tiny Shooter",
+  "position": "PF",
+  "height": 77,
+  "weight": 210,
+  "wingspan": 77,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 93,
+    "Standing Dunk": 64,
+    "Post Control": 89,
+    "Mid-Range Shot": 99,
+    "Three-Point Shot": 99,
+    "Free Throw": 99,
+    "Pass Accuracy": 99,
+    "Ball Handle": 95,
+    "Speed With Ball": 88,
+    "Interior Defense": 80,
+    "Perimeter Defense": 95,
+    "Steal": 92,
+    "Block": 62,
+    "Offensive Rebound": 68,
+    "Defensive Rebound": 70,
+    "Speed": 96,
+    "Agility": 92,
+    "Strength": 87,
+    "Vertical": 98
+  },
+  "chosen": {
+    "Close Shot": 84,
+    "Driving Layup": 77,
+    "Driving Dunk": 25,
+    "Standing Dunk": 25,
+    "Post Control": 42,
+    "Mid-Range Shot": 99,
+    "Three-Point Shot": 99,
+    "Free Throw": 99,
+    "Pass Accuracy": 77,
+    "Ball Handle": 92,
+    "Speed With Ball": 72,
+    "Interior Defense": 25,
+    "Perimeter Defense": 42,
+    "Steal": 27,
+    "Block": 27,
+    "Offensive Rebound": 25,
+    "Defensive Rebound": 25,
+    "Speed": 72,
+    "Agility": 57,
+    "Strength": 32,
+    "Vertical": 42
+  },
+  "cb_steps": {
+    "Close Shot": [
+      86,
+      88,
+      90,
+      92,
+      94
+    ],
+    "Driving Layup": [
+      79,
+      81,
+      83,
+      85,
+      86
+    ],
+    "Driving Dunk": [
+      37,
+      48,
+      57,
+      64,
+      71
+    ],
+    "Standing Dunk": [
+      39,
+      51,
+      62,
+      64
+    ],
+    "Post Control": [
+      53,
+      62,
+      69,
+      75,
+      80
+    ],
+    "Mid-Range Shot": [],
+    "Three-Point Shot": [],
+    "Free Throw": [],
+    "Pass Accuracy": [
+      79,
+      81,
+      83,
+      85,
+      86
+    ],
+    "Ball Handle": [
+      93,
+      94,
+      95
+    ],
+    "Speed With Ball": [
+      73,
+      74,
+      75,
+      76,
+      77
+    ],
+    "Interior Defense": [
+      39,
+      51,
+      61,
+      69,
+      75
+    ],
+    "Perimeter Defense": [
+      48,
+      54,
+      59,
+      64,
+      68
+    ],
+    "Steal": [
+      38,
+      48,
+      56,
+      64,
+      70
+    ],
+    "Block": [
+      41,
+      52,
+      61,
+      62
+    ],
+    "Offensive Rebound": [
+      38,
+      49,
+      59,
+      67,
+      68
+    ],
+    "Defensive Rebound": [
+      38,
+      49,
+      58,
+      66,
+      70
+    ],
+    "Speed": [
+      73,
+      74,
+      75,
+      76,
+      77
+    ],
+    "Agility": [
+      61,
+      65,
+      68,
+      71,
+      74
+    ],
+    "Strength": [
+      44,
+      54,
+      63,
+      70,
+      76
+    ],
+    "Vertical": [
+      48,
+      54,
+      59,
+      64,
+      68
+    ]
+  }
+}

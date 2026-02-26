@@ -1,0 +1,143 @@
+{
+  "id": 13,
+  "name": "SF Tiny Big Man",
+  "position": "SF",
+  "height": 76,
+  "weight": 180,
+  "wingspan": 76,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 92,
+    "Standing Dunk": 59,
+    "Post Control": 82,
+    "Mid-Range Shot": 99,
+    "Three-Point Shot": 99,
+    "Free Throw": 99,
+    "Pass Accuracy": 99,
+    "Ball Handle": 96,
+    "Speed With Ball": 90,
+    "Interior Defense": 72,
+    "Perimeter Defense": 89,
+    "Steal": 92,
+    "Block": 61,
+    "Offensive Rebound": 62,
+    "Defensive Rebound": 65,
+    "Speed": 99,
+    "Agility": 99,
+    "Strength": 64,
+    "Vertical": 99
+  },
+  "chosen": {
+    "Close Shot": 77,
+    "Driving Layup": 64,
+    "Driving Dunk": 64,
+    "Standing Dunk": 59,
+    "Post Control": 82,
+    "Mid-Range Shot": 37,
+    "Three-Point Shot": 25,
+    "Free Throw": 40,
+    "Pass Accuracy": 54,
+    "Ball Handle": 79,
+    "Speed With Ball": 84,
+    "Interior Defense": 72,
+    "Perimeter Defense": 69,
+    "Steal": 74,
+    "Block": 61,
+    "Offensive Rebound": 62,
+    "Defensive Rebound": 65,
+    "Speed": 99,
+    "Agility": 99,
+    "Strength": 64,
+    "Vertical": 99
+  },
+  "cb_steps": {
+    "Close Shot": [
+      81,
+      84,
+      86,
+      88,
+      90
+    ],
+    "Driving Layup": [
+      66,
+      68,
+      70,
+      72,
+      74
+    ],
+    "Driving Dunk": [
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "Standing Dunk": [],
+    "Post Control": [],
+    "Mid-Range Shot": [
+      43,
+      48,
+      53,
+      57,
+      61
+    ],
+    "Three-Point Shot": [
+      34,
+      42,
+      49,
+      55,
+      61
+    ],
+    "Free Throw": [
+      52,
+      61,
+      69,
+      75,
+      80
+    ],
+    "Pass Accuracy": [
+      57,
+      60,
+      63,
+      66,
+      69
+    ],
+    "Ball Handle": [
+      80,
+      81,
+      82,
+      83,
+      84
+    ],
+    "Speed With Ball": [
+      85,
+      86,
+      87,
+      88,
+      89
+    ],
+    "Interior Defense": [],
+    "Perimeter Defense": [
+      70,
+      71,
+      72,
+      73,
+      74
+    ],
+    "Steal": [
+      76,
+      78,
+      80,
+      82,
+      84
+    ],
+    "Block": [],
+    "Offensive Rebound": [],
+    "Defensive Rebound": [],
+    "Speed": [],
+    "Agility": [],
+    "Strength": [],
+    "Vertical": []
+  }
+}
