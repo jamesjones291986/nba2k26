@@ -1,0 +1,15 @@
+{
+  "description": "Target attribute minimums",
+  "targets": {
+    "Three-Point Shot": 91,
+    "Speed": 86,
+    "Agility": 86,
+    "Perimeter Defense": 92,
+    "Block": 78,
+    "Driving Dunk": 87,
+    "Steal": 85,
+    "Defensive Rebound": 75,
+    "Offensive Rebound": 75,
+    "Vertical": 90
+  }
+}

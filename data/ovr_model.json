@@ -1,0 +1,29 @@
+{
+  "intercept": 57.63448725637615,
+  "power": 1.0,
+  "weights": {
+    "Close Shot": 1.661357238891924,
+    "Driving Layup": 2.007816006136827,
+    "Driving Dunk": 0.9791215867858925,
+    "Standing Dunk": 0.3300000341913095,
+    "Post Control": 0.8667684649839585,
+    "Mid-Range Shot": 1.645635220330215,
+    "Three-Point Shot": 1.4260770360736028,
+    "Free Throw": 1.535024971742062,
+    "Pass Accuracy": 1.926949357823515,
+    "Ball Handle": 2.417437744205212,
+    "Speed With Ball": 2.3524605017201883,
+    "Interior Defense": 0.3745221408737065,
+    "Perimeter Defense": 2.032259099906889,
+    "Steal": 1.244109029563901,
+    "Block": 0.4005471853685168,
+    "Offensive Rebound": 0.15216088126362412,
+    "Defensive Rebound": 0.17168126852807797,
+    "Speed": 2.547428749850369,
+    "Agility": 2.270426314860303,
+    "Strength": 0.7002119128257034,
+    "Vertical": 1.819076920063644
+  },
+  "loo_mae": 15.553214770942606,
+  "note": "OVR = intercept + sum(w_i * ((attr_i - 25)/74)^power). Trained on SG 6-3 data."
+}

@@ -1,0 +1,183 @@
+{
+  "id": 18,
+  "name": "Target Build SF",
+  "position": "SF",
+  "height": 80,
+  "weight": 185,
+  "wingspan": 81,
+  "builder_caps": {
+    "Close Shot": 99,
+    "Driving Layup": 99,
+    "Driving Dunk": 95,
+    "Standing Dunk": 94,
+    "Post Control": 95,
+    "Mid-Range Shot": 95,
+    "Three-Point Shot": 90,
+    "Free Throw": 98,
+    "Pass Accuracy": 99,
+    "Ball Handle": 86,
+    "Speed With Ball": 80,
+    "Interior Defense": 89,
+    "Perimeter Defense": 95,
+    "Steal": 86,
+    "Block": 82,
+    "Offensive Rebound": 71,
+    "Defensive Rebound": 77,
+    "Speed": 89,
+    "Agility": 89,
+    "Strength": 77,
+    "Vertical": 98
+  },
+  "chosen": {
+    "Close Shot": 70,
+    "Driving Layup": 67,
+    "Driving Dunk": 87,
+    "Standing Dunk": 55,
+    "Post Control": 26,
+    "Mid-Range Shot": 85,
+    "Three-Point Shot": 90,
+    "Free Throw": 70,
+    "Pass Accuracy": 70,
+    "Ball Handle": 53,
+    "Speed With Ball": 57,
+    "Interior Defense": 60,
+    "Perimeter Defense": 92,
+    "Steal": 85,
+    "Block": 78,
+    "Offensive Rebound": 40,
+    "Defensive Rebound": 65,
+    "Speed": 86,
+    "Agility": 86,
+    "Strength": 60,
+    "Vertical": 90
+  },
+  "cb_steps": {
+    "Close Shot": [
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "Driving Layup": [
+      4,
+      4,
+      3,
+      3,
+      3
+    ],
+    "Driving Dunk": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Standing Dunk": [
+      7,
+      6,
+      5,
+      4,
+      4
+    ],
+    "Post Control": [
+      14,
+      12,
+      9,
+      8,
+      7
+    ],
+    "Mid-Range Shot": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Three-Point Shot": [],
+    "Free Throw": [
+      6,
+      5,
+      5,
+      4,
+      3
+    ],
+    "Pass Accuracy": [
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "Ball Handle": [
+      7,
+      6,
+      5,
+      5,
+      4
+    ],
+    "Speed With Ball": [
+      6,
+      6,
+      5,
+      4,
+      2
+    ],
+    "Interior Defense": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "Perimeter Defense": [
+      1,
+      1,
+      1
+    ],
+    "Steal": [
+      1
+    ],
+    "Block": [
+      2,
+      2
+    ],
+    "Offensive Rebound": [
+      10,
+      9,
+      7,
+      5
+    ],
+    "Defensive Rebound": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "Speed": [
+      1,
+      1,
+      1
+    ],
+    "Agility": [
+      1,
+      1,
+      1
+    ],
+    "Strength": [
+      3,
+      2,
+      2,
+      2,
+      2
+    ],
+    "Vertical": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+}
