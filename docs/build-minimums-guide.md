@@ -1,6 +1,8 @@
 # NBA 2K26 Build Minimums Guide — Optimized Attributes with Badge Boosts
 
-How to set your attribute minimums lower by leveraging in-game badge boosts to reach your target badge tiers.
+How to set your attribute minimums by leveraging in-game badge boosts to reach HoF+ on must-have badges.
+
+**Philosophy:** Must-have badges should be at minimum **HoF**. Strong options should be at minimum **Gold**. Some badges you'll unlock naturally through high attributes without needing boosts.
 
 > Cross-reference: badge-requirements.md for exact thresholds, badge-tier-list.md for tier classifications
 
@@ -16,262 +18,370 @@ You earn badge level increases through gameplay progression:
 | **Tier 1** | +1, +1, and +2 | +4 across Tier 1 badges |
 | **Tier 2** | +1, +1, and +2 | +4 across Tier 2 badges |
 
-Each +1 raises a badge one level (e.g., Silver → Gold). Each +2 raises two levels (e.g., Silver → HoF).
+Each +1 raises a badge one level (e.g., Gold → HoF). Each +2 raises two levels (e.g., Silver → HoF or Gold → Legend).
 
-**Strategy:** Build your attributes to unlock a badge one or two tiers BELOW your target, then use boosts to reach the target tier. This saves significant attribute points.
+**Strategy:** Build your attributes to unlock a badge one or two tiers BELOW your target, then use boosts to reach HoF or Legend.
 
 ---
 
 ## Point Guard (6'0–6'4)
 
-### Must-Have Badges & Boost Plan
+### Must-Have Badges — Target HoF Minimum
 
-| Badge | Target Tier | Badge Pool | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|------------|----------|---------------|-------------------|
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
 | Lightning Launch | HoF | Tier 1 | Gold | +2 | 86 Speed With Ball |
-| Set Shot Specialist | Gold | Shooting | Silver | +2 | 78 Mid or 78 3PT |
-| Handles For Days | Gold | Tier 1 | Silver | +1 | 81 Ball Handle |
-| On-Ball Menace | Gold | Tier 1 | Silver | +1 | 85 Perimeter Def + 76 Agility |
+| Set Shot Specialist | HoF | Shooting | Gold | +2 | 89 Mid or 89 3PT |
+| Handles For Days | HoF | Tier 1 | Gold | +1 | 90 Ball Handle |
+| On-Ball Menace | HoF | Tier 1 | Gold | +1 | 91 Perimeter Def + 80 Agility |
 | Pick Dodger | Legend | Tier 1 | — | — | 99 Perimeter Def + 92 Agility |
+
+**Problem:** That's +2, +1, +1 on Tier 1 = all used up, and Pick Dodger Legend gets no boost. Pick Dodger at Legend requires 99 Perimeter Def + 92 Agility raw.
+
+**Alternative — Pick Dodger HoF with boost:**
+
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
+| Lightning Launch | HoF | Tier 1 | Gold | +1 | 86 Speed With Ball |
+| Set Shot Specialist | HoF | Shooting | Gold | +2 | 89 Mid or 89 3PT |
+| Handles For Days | HoF | Tier 1 | Gold | +1 | 90 Ball Handle |
+| On-Ball Menace | HoF | Tier 1 | Gold | +2 | 91 Perimeter Def + 80 Agility |
+| Pick Dodger | HoF | Tier 1 | — | — | 97 Perimeter Def + 85 Agility |
+
+Wait — that's +1, +1, +2 = all Tier 1 used. But Lightning Launch Gold → HoF is only +1, which doesn't work (Gold +1 = HoF ✓). Let me fix:
+
+### Recommended Plan
+
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
+| Lightning Launch | HoF | Tier 1 | Gold | +2 | 86 Speed With Ball |
+| Set Shot Specialist | HoF | Shooting | Gold | +2 | 89 Mid or 89 3PT |
+| Handles For Days | HoF | Tier 1 | Gold | +1 | 90 Ball Handle |
+| On-Ball Menace | HoF | Tier 1 | Gold | +1 | 91 Perimeter Def + 80 Agility |
+| Pick Dodger | HoF | Tier 1 | HoF | — | 97 Perimeter Def + 85 Agility |
+
+Pick Dodger has no boost left — you need to hit HoF raw (97 Perimeter Def + 85 Agility). Since On-Ball Menace Gold already needs 91 Perimeter Def, pushing to 97 for Pick Dodger HoF is the main cost.
+
+### Strong Options (Gold, natural or Tier 2 boosted)
+
+| Badge | Pool | Build To | Boost | Attributes Needed |
+|-------|------|----------|-------|-------------------|
+| Posterizer | Tier 1 | Gold | — | 93 Driving Dunk + 80 Vertical (natural if you invest) |
+| Interceptor | Tier 1 | Gold | — | 85 Steal (natural) |
+| Limitless Range | Shooting | Gold | +1 | 89 3PT (already have from SSS) |
+| Challenger | Tier 1 | Gold | — | 92 Perimeter Def (already have from OBM/PD) |
 
 ### Boost Allocation
 
 **Shooting (+1, +2):**
-- Set Shot Specialist: +2 (Silver → Gold) ✓
-- Limitless Range or Deadeye: +1 (bonus)
+- Set Shot Specialist: +2 (Gold → HoF) ✓
+- Limitless Range: +1 (Silver → Gold) ✓
 
 **Tier 1 (+1, +1, +2):**
 - Lightning Launch: +2 (Gold → HoF) ✓
-- Handles For Days: +1 (Silver → Gold) ✓
-- On-Ball Menace: +1 (Silver → Gold) ✓
+- Handles For Days: +1 (Gold → HoF) ✓
+- On-Ball Menace: +1 (Gold → HoF) ✓
 
 **Tier 2 (+1, +1, +2):** Free for secondary badges
-- Interceptor: if at Tier 2 at your height, otherwise use on Float Game, Layup Mixmaster, etc.
+- Float Game, Layup Mixmaster, Aerial Wizard, etc.
 
-### Optimized Attribute Minimums
+### Final Attribute Minimums
 
-| Attribute | Without Boosts | With Boosts | Savings |
-|-----------|---------------|-------------|---------|
-| Speed With Ball | 91 (HoF) | **86** (Gold) | -5 |
-| Mid-Range / 3PT | 89 (Gold) | **78** (Silver) | -11 |
-| Ball Handle | 90 (Gold) | **81** (Silver) | -9 |
-| Perimeter Defense | 99 (Legend PD) | **99** (no savings on PD — Legend requires max) | 0 |
-| Agility | 92 (Legend PD) | **92** | 0 |
-
-**Note:** Pick Dodger at Legend is extremely expensive (99 Perimeter Def + 92 Agility). Consider targeting HoF instead (97 + 85) and boosting with a Tier 1 +1 if you drop On-Ball Menace to Silver without boost.
-
-### Alternative: Pick Dodger HoF (more realistic)
-
-| Badge | Target Tier | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|----------|---------------|-------------------|
-| Pick Dodger | HoF | Gold | +2 (Tier 1) | 90 Perimeter Def + 79 Agility |
-| Lightning Launch | HoF | Silver | +1 + +1 (two Tier 1 +1s) | 75 Speed With Ball |
-| On-Ball Menace | Gold | Silver | — (no boost) | 85 Perimeter Def + 76 Agility |
-
-This trades Lightning Launch HoF efficiency for a more balanced build.
+| Attribute | Minimum | Badges Unlocked |
+|-----------|---------|-----------------|
+| Speed With Ball | 86 | Gold Lightning Launch (→ HoF via boost) |
+| Mid-Range / 3PT | 89 | Gold Set Shot Specialist (→ HoF), Silver Limitless (→ Gold) |
+| Ball Handle | 90 | Gold Handles For Days (→ HoF) |
+| Perimeter Defense | 97 | HoF Pick Dodger, Gold On-Ball Menace (→ HoF), Gold Challenger |
+| Agility | 85 | HoF Pick Dodger, Gold On-Ball Menace |
+| Steal | 85 | Gold Interceptor (natural) |
 
 ---
 
 ## Wing / Shot Creator (6'5–6'8)
 
-### Must-Have Badges & Boost Plan
+### Must-Have Badges — Target HoF Minimum
 
-| Badge | Target Tier | Badge Pool | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|------------|----------|---------------|-------------------|
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
 | Set Shot Specialist | HoF | Shooting | Gold | +2 | 89 Mid or 89 3PT |
-| Limitless Range | Gold | Shooting | Silver | +1 | 89 3PT |
-| Lightning Launch | Gold | Tier 1 (6'5–6'7) / Tier 2 (6'8) | Silver | +1 | 75 Speed With Ball |
-| Posterizer | Gold | Tier 1 | Silver | +1 | 87 Driving Dunk + 75 Vertical |
-| Challenger | Gold | Tier 1 | Silver | +2 | 82 Perimeter Def |
+| Limitless Range | HoF | Shooting | Gold | +1 | 93 3PT |
+| Lightning Launch | HoF | Tier 1 (6'5–6'7) | Gold | +2 | 86 Speed With Ball |
+| Posterizer | HoF | Tier 1 | Gold | +1 | 93 Driving Dunk + 80 Vertical |
+| Challenger | HoF | Tier 1 | Gold | +1 | 92 Perimeter Def |
+
+### Strong Options (Gold, natural or Tier 2 boosted)
+
+| Badge | Pool | Build To | Boost | Attributes Needed |
+|-------|------|----------|-------|-------------------|
+| Deadeye | Shooting | Gold | — | 92 Mid or 92 3PT (natural from 93 3PT) |
+| Handles For Days | Tier 1 | Gold | — | 90 Ball Handle (natural if ball handler) |
+| Interceptor | Tier 1 | Gold | — | 85 Steal |
+| Immovable Enforcer | Tier 2 | Gold | +2 | 84 Perimeter Def + 85 Strength |
+| Float Game | Tier 2 | Gold | +1 | 86 Close Shot or 88 Driving Layup |
 
 ### Boost Allocation
 
 **Shooting (+1, +2):**
 - Set Shot Specialist: +2 (Gold → HoF) ✓
-- Limitless Range: +1 (Silver → Gold) ✓
+- Limitless Range: +1 (Gold → HoF) ✓
 
 **Tier 1 (+1, +1, +2):**
-- Challenger: +2 (Silver → Gold) ✓
-- Lightning Launch: +1 (Silver → Gold) ✓ *(at 6'5–6'7)*
-- Posterizer: +1 (Silver → Gold) ✓
+- Lightning Launch: +2 (Gold → HoF) ✓
+- Posterizer: +1 (Gold → HoF) ✓
+- Challenger: +1 (Gold → HoF) ✓
 
-**Tier 2 (+1, +1, +2):** Free for secondary badges
-- Immovable Enforcer, Float Game, High-Flying Denier, etc.
+**Tier 2 (+1, +1, +2):**
+- Immovable Enforcer: +2 (Silver → Gold) or other
+- Float Game: +1
+- Free: +1
 
-*At 6'8: Lightning Launch is Tier 2, so use a Tier 2 +1 on it instead, and reallocate the Tier 1 +1 to Handles For Days or Interceptor.*
+### Final Attribute Minimums
 
-### Optimized Attribute Minimums
-
-| Attribute | Without Boosts | With Boosts | Savings |
-|-----------|---------------|-------------|---------|
-| Mid-Range / 3PT | 93 (HoF SSS) | **89** (Gold SSS, boosted to HoF) | -4 |
-| Three-Point Shot | 93 (Gold LR) | **89** (Silver LR, boosted to Gold) | -4 |
-| Speed With Ball | 86 (Gold LL) | **75** (Silver LL, boosted to Gold) | -11 |
-| Driving Dunk | 93 (Gold Post) | **87** (Silver Post, boosted to Gold) | -6 |
-| Vertical | 80 (Gold Post) | **75** (Silver Post) | -5 |
-| Perimeter Defense | 92 (Gold Chall) | **82** (Silver Chall, boosted to Gold) | -10 |
+| Attribute | Minimum | Badges Unlocked |
+|-----------|---------|-----------------|
+| Three-Point Shot | 93 | Gold Limitless (→ HoF), Gold SSS (→ HoF), Gold Deadeye |
+| Mid-Range | 89+ | Gold SSS (if using Mid instead of 3PT) |
+| Speed With Ball | 86 | Gold Lightning Launch (→ HoF) |
+| Driving Dunk | 93 | Gold Posterizer (→ HoF) |
+| Vertical | 80 | Gold Posterizer |
+| Perimeter Defense | 92 | Gold Challenger (→ HoF) |
 
 ---
 
 ## 3-and-D Wing (6'5–6'8)
 
-### Must-Have Badges & Boost Plan
+### Must-Have Badges — Target HoF Minimum
 
-| Badge | Target Tier | Badge Pool | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|------------|----------|---------------|-------------------|
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
 | Set Shot Specialist | HoF | Shooting | Gold | +2 | 89 Mid or 89 3PT |
-| Limitless Range | Gold | Shooting | Silver | +1 | 89 3PT |
+| Limitless Range | HoF | Shooting | Gold | +1 | 93 3PT |
 | Challenger | HoF | Tier 1 | Gold | +2 | 92 Perimeter Def |
-| On-Ball Menace | Gold | Tier 1 | Silver | +1 | 85 Perimeter Def + 76 Agility |
-| Pick Dodger | Gold | Tier 1 | Silver | +1 | 83 Perimeter Def + 75 Agility |
+| On-Ball Menace | HoF | Tier 1 | Gold | +1 | 91 Perimeter Def + 80 Agility |
+| Pick Dodger | HoF | Tier 1 | Gold | +1 | 90 Perimeter Def + 79 Agility |
+
+### Strong Options (Gold, natural or Tier 2 boosted)
+
+| Badge | Pool | Build To | Boost | Attributes Needed |
+|-------|------|----------|-------|-------------------|
+| Interceptor | Tier 1 | Gold | — | 85 Steal (natural) |
+| Immovable Enforcer | Tier 2 | Gold | +2 | 84 Perimeter Def + 85 Strength |
+| Deadeye | Shooting | Gold | — | 92 3PT (natural from 93 3PT) |
+| Off-Ball Pest | Tier 2 | Gold | +1 | 80 Perimeter Def (natural from 92) |
 
 ### Boost Allocation
 
 **Shooting (+1, +2):**
 - Set Shot Specialist: +2 (Gold → HoF) ✓
-- Limitless Range: +1 (Silver → Gold) ✓
+- Limitless Range: +1 (Gold → HoF) ✓
 
 **Tier 1 (+1, +1, +2):**
 - Challenger: +2 (Gold → HoF) ✓
-- On-Ball Menace: +1 (Silver → Gold) ✓
-- Pick Dodger: +1 (Silver → Gold) ✓
+- On-Ball Menace: +1 (Gold → HoF) ✓
+- Pick Dodger: +1 (Gold → HoF) ✓
 
-**Tier 2 (+1, +1, +2):** Free for secondary badges
-- Interceptor (if Tier 2 at height), Immovable Enforcer, Off-Ball Pest
+**Tier 2 (+1, +1, +2):**
+- Immovable Enforcer: +2 (Silver → Gold)
+- Off-Ball Pest: +1
+- Free: +1
 
-### Optimized Attribute Minimums
+### Final Attribute Minimums
 
-| Attribute | Without Boosts | With Boosts | Savings |
-|-----------|---------------|-------------|---------|
-| Mid-Range / 3PT | 93 (HoF SSS) | **89** (Gold) | -4 |
-| Three-Point Shot | 93 (Gold LR) | **89** (Silver LR) | -4 |
-| Perimeter Defense | 95 (HoF Chall) | **92** (Gold Chall, boosted to HoF) | -3 |
-| Agility | 80 (Gold OBM) | **76** (Silver OBM) | -4 |
-
-**Note:** Perimeter Defense 92 still covers Gold Challenger (build-to), Silver On-Ball Menace (85), and Silver Pick Dodger (83) — one attribute investment unlocks three badges.
+| Attribute | Minimum | Badges Unlocked |
+|-----------|---------|-----------------|
+| Three-Point Shot | 93 | Gold Limitless (→ HoF), Gold SSS (→ HoF), Gold Deadeye |
+| Perimeter Defense | 92 | Gold Challenger (→ HoF), Gold OBM, Gold Pick Dodger |
+| Agility | 80 | Gold On-Ball Menace, Gold Pick Dodger |
+| Steal | 85 | Gold Interceptor (natural) |
 
 ---
 
 ## Lockdown Defender (6'5–6'9)
 
-### Must-Have Badges & Boost Plan (6'5–6'8)
+### Must-Have Badges — Target HoF/Legend
 
-| Badge | Target Tier | Badge Pool | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|------------|----------|---------------|-------------------|
+| Badge | Target | Pool (6'5–6'8) | Build To | Boost | Attributes Needed |
+|-------|--------|----------------|----------|-------|-------------------|
 | On-Ball Menace | Legend | Tier 1 | HoF | +2 | 96 Perimeter Def + 84 Agility |
 | Challenger | HoF | Tier 1 | Gold | +1 | 92 Perimeter Def |
 | Pick Dodger | Legend | Tier 1 | HoF | +1 | 97 Perimeter Def + 85 Agility |
-| Immovable Enforcer | Gold | Tier 2 | Silver | +2 | 72 Perimeter Def + 82 Strength |
-| Interceptor | Gold | Tier 1 | Gold | — | 85 Steal |
+| Immovable Enforcer | HoF | Tier 2 | Gold | +2 | 84 Perimeter Def + 85 Strength |
+| Interceptor | HoF | Tier 1 | HoF | — | 94 Steal |
 
-### At 6'9 (badges shift tiers)
+### At 6'9 (badges shift to Tier 2)
 
-| Badge | Target Tier | Badge Pool | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|------------|----------|---------------|-------------------|
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
 | On-Ball Menace | Legend | Tier 2 | HoF | +2 | 96 Perimeter Def + 84 Agility |
 | Challenger | HoF | Tier 2 | Gold | +1 | 92 Perimeter Def |
 | Pick Dodger | Legend | Tier 2 | HoF | +1 | 97 Perimeter Def + 85 Agility |
-| Interceptor | Gold | Tier 1 | Silver | +2 | 73 Steal |
-| Pogo Stick | Gold | Tier 1 | Silver | +1 | 70 Vertical |
+| Interceptor | HoF | Tier 1 | Gold | +2 | 85 Steal |
+| Pogo Stick | HoF | Tier 1 | Gold | +1 | 77 Vertical |
+| Immovable Enforcer | HoF | Tier 2 | HoF | — | 89 Perimeter Def + 91 Strength |
 
-**Note at 6'9:** On-Ball Menace, Challenger, and Pick Dodger all move to Tier 2. This is actually beneficial — you can use all your Tier 2 boosts on defense and Tier 1 boosts on Interceptor/Pogo Stick.
+**6'9 advantage:** Defense badges move to Tier 2, freeing Tier 1 for Interceptor and Pogo Stick boosts.
 
 ### Boost Allocation (6'5–6'8)
 
 **Shooting (+1, +2):**
-- Set Shot Specialist: +2 (Silver → Gold) — you still need to hit open 3s
+- Set Shot Specialist: +2 (Silver → Gold) — need to hit open 3s to be playable
 - Deadeye or Limitless: +1
 
 **Tier 1 (+1, +1, +2):**
 - On-Ball Menace: +2 (HoF → Legend) ✓
-- Challenger: +1 (Gold → HoF) ✓
 - Pick Dodger: +1 (HoF → Legend) ✓
+- Challenger: +1 (Gold → HoF) ✓
 
 **Tier 2 (+1, +1, +2):**
-- Immovable Enforcer: +2 (Silver → Gold) ✓
+- Immovable Enforcer: +2 (Gold → HoF) ✓
 - Off-Ball Pest: +1
-- Other: +1
+- Free: +1
 
-### Optimized Attribute Minimums (6'5–6'8)
+### Final Attribute Minimums (6'5–6'8)
 
-| Attribute | Without Boosts | With Boosts | Savings |
-|-----------|---------------|-------------|---------|
-| Perimeter Defense | 99 (Legend OBM/PD) | **97** (HoF PD, boosted to Legend) | -2 |
-| Agility | 92 (Legend PD) | **85** (HoF PD) | -7 |
-| Strength | 85 (Gold IE) | **82** (Silver IE, boosted to Gold) | -3 |
-| Steal | 85 (Gold Int) | **85** (no boost needed) | 0 |
-| Mid-Range / 3PT | 89 (Gold SSS) | **78** (Silver SSS, boosted to Gold) | -11 |
+| Attribute | Minimum | Badges Unlocked |
+|-----------|---------|-----------------|
+| Perimeter Defense | 97 | HoF Pick Dodger (→ Legend), HoF On-Ball Menace (→ Legend), Gold Challenger (→ HoF) |
+| Agility | 85 | HoF Pick Dodger, HoF On-Ball Menace |
+| Strength | 85 | Gold Immovable Enforcer (→ HoF) |
+| Steal | 94 | HoF Interceptor (natural, no boost) |
+| Mid-Range / 3PT | 78 | Silver Set Shot Specialist (→ Gold via shooting +2) |
 
 ---
 
 ## Center / Big Man (6'10+)
 
-### Must-Have Badges & Boost Plan
+### Must-Have Badges — Target HoF Minimum
 
-| Badge | Target Tier | Badge Pool | Build To | Boost Applied | Attributes Needed |
-|-------|-------------|------------|----------|---------------|-------------------|
+| Badge | Target | Pool | Build To | Boost | Attributes Needed |
+|-------|--------|------|----------|-------|-------------------|
 | Paint Patroller | HoF | Tier 1 | Gold | +2 | 77 Interior Def + 93 Block |
-| Pogo Stick | Gold | Tier 1 | Silver | +1 | 70 Vertical |
-| Rise Up | Gold | Tier 1 | Silver | +1 | 81 Standing Dunk + 62 Vertical |
-| Set Shot Specialist | Gold | Shooting | Silver | +2 | 78 Mid or 78 3PT |
-| Challenger | Gold | Tier 2 | Silver | +2 | 82 Perimeter Def |
+| Pogo Stick | HoF | Tier 1 | Gold | +1 | 77 Vertical |
+| Rise Up | HoF | Tier 1 | Gold | +1 | 90 Standing Dunk + 66 Vertical |
+| Set Shot Specialist | HoF | Shooting | Gold | +2 | 89 Mid or 89 3PT |
+| Challenger | HoF | Tier 2 | Gold | +2 | 92 Perimeter Def |
+
+### Strong Options (Gold, natural from high attributes)
+
+| Badge | Pool | How You Get Gold | Attributes Needed |
+|-------|------|------------------|-------------------|
+| Rebound Chaser | Tier 1 | Natural (99 Def Rebound) | 99 Def Rebound → Legend free |
+| Boxout Beast | Tier 1 | Natural (99 Def Rebound) | 99 Def Rebound → Legend free |
+| Posterizer | Tier 2 (6'11+) | Tier 2 +1 boost | 87 Driving Dunk + 75 Vertical (Silver → Gold) |
+| High-Flying Denier | Tier 2 | Tier 2 +1 boost | 78 Block + 74 Vertical (Silver → Gold) |
+| Post Lockdown | Tier 2 (6'10) / Tier 1 (6'11+) | Natural from high Int Def + Strength | 88 Int Def + 84 Strength = Gold |
+| Paint Prodigy | Tier 1 | Natural from high Close Shot | 92 Close Shot = Gold |
 
 ### Boost Allocation
 
 **Shooting (+1, +2):**
-- Set Shot Specialist: +2 (Silver → Gold) ✓
-- Deadeye or Limitless Range: +1 (bonus if you have the attributes)
+- Set Shot Specialist: +2 (Gold → HoF) ✓
+- Limitless Range or Deadeye: +1 (bonus if you have 89+ 3PT or 85+ Mid)
 
 **Tier 1 (+1, +1, +2):**
 - Paint Patroller: +2 (Gold → HoF) ✓
-- Pogo Stick: +1 (Silver → Gold) ✓
-- Rise Up: +1 (Silver → Gold) ✓
+- Pogo Stick: +1 (Gold → HoF) ✓
+- Rise Up: +1 (Gold → HoF) ✓
 
 **Tier 2 (+1, +1, +2):**
-- Challenger: +2 (Silver → Gold) ✓
-- Rebound Chaser: already Tier 1, so use Tier 2 on:
-  - High-Flying Denier: +1
-  - Immovable Enforcer: +1
+- Challenger: +2 (Gold → HoF) ✓
+- Posterizer: +1 (Silver → Gold) ✓
+- High-Flying Denier: +1 (Silver → Gold) ✓
 
-### Optimized Attribute Minimums
+### Final Attribute Minimums
 
-| Attribute | Without Boosts | With Boosts | Savings |
-|-----------|---------------|-------------|---------|
-| Block | 97 (HoF PP) | **93** (Gold PP, boosted to HoF) | -4 |
-| Interior Defense | 84 (HoF PP) | **77** (Gold PP) | -7 |
-| Perimeter Defense | 92 (Gold Chall) | **82** (Silver Chall, boosted to Gold) | -10 |
-| Standing Dunk | 90 (Gold RU) | **81** (Silver RU, boosted to Gold) | -9 |
-| Vertical | 77 (Gold Pogo) | **70** (Silver Pogo, boosted to Gold) | -7 |
-| Mid-Range / 3PT | 89 (Gold SSS) | **78** (Silver SSS, boosted to Gold) | -11 |
+| Attribute | Minimum | Badges Unlocked |
+|-----------|---------|-----------------|
+| Block | 93 | Gold Paint Patroller (→ HoF via boost) |
+| Interior Defense | 77 | Gold Paint Patroller |
+| Vertical | 77 | Gold Pogo Stick (→ HoF), covers Rise Up (66) and HFD Silver (74) |
+| Standing Dunk | 90 | Gold Rise Up (→ HoF) |
+| Perimeter Defense | 92 | Gold Challenger (→ HoF) |
+| Mid-Range or 3PT | 89 | Gold Set Shot Specialist (→ HoF) |
+| Def Rebound | 99 | Legend Rebound Chaser + Legend Boxout Beast (free, no boost) |
+| Off Rebound | 90+ | HoF Rebound Chaser + HoF Boxout Beast (free) |
+| Driving Dunk | 87 | Silver Posterizer (→ Gold via Tier 2 +1) |
+| Strength | 84+ | Gold Post Lockdown (natural with 88+ Int Def) |
 
-### Strong Options (where to spend leftover Tier 2 boosts)
+### Badges You Get Free from Natural Attributes
 
-| Badge | Build To | Boost | Result |
-|-------|----------|-------|--------|
-| High-Flying Denier | Silver (78 Block + 74 Vertical) | +1 | Gold |
-| Immovable Enforcer | Silver (72 Perimeter Def + 82 Strength) | +1 | Gold |
-| Post Lockdown | Silver (82 Interior Def + 78 Strength) | — | Silver (or boost if prioritized) |
+A center with 99 Def Rebound, 90+ Off Rebound, 93 Block, and 90 Standing Dunk will naturally unlock:
+
+| Badge | Level Unlocked (no boost) | Why |
+|-------|---------------------------|-----|
+| Rebound Chaser | Legend | 99 Def Rebound |
+| Boxout Beast | Legend | 99 Def Rebound (req: 98) |
+| Paint Prodigy | Gold+ | High Close Shot (natural for inside scoring) |
+| Post Lockdown | Gold | 88+ Int Def + 84+ Strength |
+| High-Flying Denier | Silver | 93 Block + 77 Vertical (natural) |
 
 ---
 
-## Summary — Total Attribute Savings by Position
+## Summary — Attribute Minimums at a Glance
 
-| Position | Key Savings | Total Points Saved (est.) |
-|----------|-------------|---------------------------|
-| Point Guard | -11 Shooting, -9 Ball Handle, -5 SWB | ~25 points |
-| Wing / Shot Creator | -11 SWB, -10 Perimeter Def, -6 Driving Dunk | ~40 points |
-| 3-and-D Wing | -4 Shooting, -3 Perimeter Def, -4 Agility | ~15 points |
-| Lockdown | -11 Shooting, -7 Agility, -3 Strength | ~23 points |
-| Center | -11 Shooting, -10 Perimeter Def, -9 Standing Dunk, -7 Vertical | ~48 points |
+### Point Guard (6'0–6'4)
 
-**Centers benefit the most** from badge boosts because their must-have badges (Paint Patroller, Pogo Stick, Rise Up) are all Tier 1, and Challenger is Tier 2 — perfectly splitting across boost pools with no conflicts.
+| Attribute | Minimum |
+|-----------|---------|
+| Speed With Ball | 86 |
+| Mid-Range / 3PT | 89 |
+| Ball Handle | 90 |
+| Perimeter Defense | 97 |
+| Agility | 85 |
+| Steal | 85 |
+
+### Wing / Shot Creator (6'5–6'8)
+
+| Attribute | Minimum |
+|-----------|---------|
+| Three-Point Shot | 93 |
+| Speed With Ball | 86 |
+| Driving Dunk | 93 |
+| Vertical | 80 |
+| Perimeter Defense | 92 |
+
+### 3-and-D Wing (6'5–6'8)
+
+| Attribute | Minimum |
+|-----------|---------|
+| Three-Point Shot | 93 |
+| Perimeter Defense | 92 |
+| Agility | 80 |
+| Steal | 85 |
+
+### Lockdown Defender (6'5–6'8)
+
+| Attribute | Minimum |
+|-----------|---------|
+| Perimeter Defense | 97 |
+| Agility | 85 |
+| Strength | 85 |
+| Steal | 94 |
+| Mid-Range / 3PT | 78 |
+
+### Center / Big Man (6'10+)
+
+| Attribute | Minimum |
+|-----------|---------|
+| Block | 93 |
+| Interior Defense | 77 |
+| Vertical | 77 |
+| Standing Dunk | 90 |
+| Perimeter Defense | 92 |
+| Mid-Range / 3PT | 89 |
+| Def Rebound | 99 |
+| Off Rebound | 90 |
+| Driving Dunk | 87 |
 
 ---
 
 ## Key Principles
 
-1. **Never waste a +2 on a badge you can reach with a +1.** Use +2 on badges where you need to jump 2 tiers (Silver → Gold when target is Gold, or Gold → HoF).
-2. **Stack attribute investments.** Perimeter Defense feeds Challenger, On-Ball Menace, Pick Dodger, and Immovable Enforcer — one attribute, multiple badges.
-3. **Shooting boosts are separate.** You always get +3 to shooting badges regardless of Tier 1/2 allocation.
-4. **Height matters.** At 6'9, many badges flip from Tier 1 to Tier 2 (On-Ball Menace, Challenger, Pick Dodger). Plan your boosts around your exact height.
-5. **Build to Silver for boosted badges.** Silver is the sweet spot — attribute requirements are much lower than Gold, and a +1 or +2 gets you where you need to be.
+1. **Must-haves = HoF minimum.** Don't settle for Gold on your core badges — the jump from Gold to HoF is significant on badges like Paint Patroller and Set Shot Specialist.
+2. **Build to Gold, boost to HoF.** Gold is the sweet spot for "build to" — attribute costs jump steeply from Gold to HoF, so let boosts cover that gap.
+3. **Natural badges are free.** High rebounding (99 Def Rebound) gives you Legend Rebound Chaser and Boxout Beast without spending any boosts. Plan your attributes to unlock strong options naturally.
+4. **Shooting boosts are separate.** You always get +3 to shooting badges regardless of Tier 1/2 allocation — use the +2 on Set Shot Specialist every time.
+5. **Height matters for tier classification.** At 6'9, many badges flip from Tier 1 to Tier 2. At 6'10+, center badges (Paint Patroller, Pogo Stick, Rise Up) are all Tier 1. Plan boosts around your exact height.
+6. **Stack attribute investments.** Perimeter Defense feeds Challenger, On-Ball Menace, Pick Dodger, and Immovable Enforcer. One attribute, multiple badges.
+7. **+2 boost on your highest-priority badge.** Always use the +2 on the badge that's hardest to reach raw (Paint Patroller for centers, Lightning Launch for guards, Challenger for 3-and-D).
