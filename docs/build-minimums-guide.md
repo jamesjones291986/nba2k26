@@ -269,6 +269,7 @@ Pick Dodger has no boost left — you need to hit HoF raw (97 Perimeter Def + 85
 | Rebound Chaser | Tier 1 | Natural (99 Def Rebound) | 99 Def Rebound → Legend free |
 | Boxout Beast | Tier 1 | Natural (99 Def Rebound) | 99 Def Rebound → Legend free |
 | Break Starter | Tier 1 | Natural from Pass Accuracy | 87 Pass Accuracy = Gold |
+| Dimer | Tier 2 | Free from Break Starter investment | 82 Pass Accuracy = Gold (already covered by 87) |
 | Posterizer | Tier 2 (6'11+) | Tier 2 +1 boost | 87 Driving Dunk + 75 Vertical (Silver → Gold) |
 | High-Flying Denier | Tier 2 | Tier 2 +1 boost | 78 Block + 74 Vertical (Silver → Gold) |
 | Post Lockdown | Tier 2 (6'10) / Tier 1 (6'11+) | Natural from high Int Def + Strength | 88 Int Def + 84 Strength = Gold |
