@@ -6,6 +6,160 @@ Community consensus on which badges are worth investing in for each build type. 
 
 ---
 
+## Badge Tier Classification (Tier 1 / Tier 2 / Shooting)
+
+Badges are classified into **Tier 1**, **Tier 2**, or **Shooting** categories. This determines which badge boost pool they draw from. Classification changes by height.
+
+> Source: nba2klab.com/badge-tier-unlocks
+
+### Shooting Badges (all heights)
+These always use the Shooting boost pool regardless of height:
+- Set Shot Specialist (Tier 1 at all heights)
+- Deadeye (Tier 1 at all heights)
+- Limitless Range (Tier 1 up to 7'0, Tier 2 at 7'1+)
+- Shifty Shooter (Tier 1 up to 6'9, Tier 2 at 6'10–6'11)
+- Mini Marksman (Tier 1, ≤ 6'3 only)
+
+### Point Guard Heights (6'0–6'4)
+
+| Badge | Tier |
+|-------|------|
+| Lightning Launch | 1 |
+| Handles For Days | 1 |
+| On-Ball Menace | 1 |
+| Pick Dodger | 1 |
+| Posterizer | 1 |
+| Interceptor | 1 |
+| Challenger | 1 |
+| Glove | 1 |
+| Bail Out | 1 |
+| Unpluckable | 1 |
+| Physical Finisher | 1 |
+| Versatile Visionary | 1 |
+| Strong Handle | 1 |
+| Ankle Assassin | 1 |
+| Aerial Wizard | 2 |
+| Float Game | 2 |
+| Layup Mixmaster | 2 |
+| Dimer | 2 |
+| Break Starter | 2 |
+| Off-Ball Pest | 2 |
+| Slippery Off-Ball | 2 |
+| Pogo Stick | 2 |
+| Boxout Beast | 2 |
+| Rebound Chaser | 2 |
+
+### Wing / Shot Creator Heights (6'5–6'8)
+
+| Badge | Tier |
+|-------|------|
+| Lightning Launch | 1 (6'5–6'7) / 2 (6'8) |
+| Handles For Days | 1 |
+| On-Ball Menace | 1 (6'5–6'8) |
+| Pick Dodger | 1 (6'5–6'8) |
+| Posterizer | 1 |
+| Interceptor | 1 |
+| Challenger | 1 (6'5–6'8) |
+| Glove | 1 |
+| Bail Out | 1 |
+| Unpluckable | 1 |
+| Physical Finisher | 1 |
+| Versatile Visionary | 1 |
+| Strong Handle | 1 |
+| Ankle Assassin | 1 |
+| Rebound Chaser | 1 |
+| Pogo Stick | 1 (6'8) / 2 (6'5–6'7) |
+| Aerial Wizard | 2 |
+| Float Game | 2 |
+| Layup Mixmaster | 2 |
+| Dimer | 2 |
+| Break Starter | 2 (6'5–6'7) / 1 (6'8) |
+| Off-Ball Pest | 2 |
+| Slippery Off-Ball | 2 |
+| Immovable Enforcer | 2 |
+| High-Flying Denier | 2 |
+| Boxout Beast | 2 |
+| Paint Patroller | 2 (6'6–6'8) |
+| Rise Up | 2 (6'6–6'8) |
+| Brick Wall | 2 (6'6–6'8) |
+| Post Lockdown | 2 (6'5–6'8) |
+
+### 6'9 (Lockdown / Tweener)
+
+| Badge | Tier |
+|-------|------|
+| Posterizer | 1 |
+| Interceptor | 1 |
+| Bail Out | 1 |
+| Unpluckable | 1 |
+| Physical Finisher | 1 |
+| Versatile Visionary | 1 |
+| Rebound Chaser | 1 |
+| Pogo Stick | 1 |
+| Paint Patroller | 1 |
+| Boxout Beast | 1 |
+| Post-Up Poet | 1 |
+| Break Starter | 1 |
+| Handles For Days | 1 |
+| Glove | 1 |
+| Strong Handle | 1 |
+| Ankle Assassin | 1 |
+| On-Ball Menace | 2 |
+| Pick Dodger | 2 |
+| Challenger | 2 |
+| Lightning Launch | 2 |
+| Aerial Wizard | 2 |
+| Float Game | 2 |
+| Layup Mixmaster | 2 |
+| Dimer | 2 |
+| Off-Ball Pest | 2 |
+| Slippery Off-Ball | 2 |
+| Immovable Enforcer | 2 |
+| High-Flying Denier | 2 |
+| Rise Up | 2 |
+| Brick Wall | 2 |
+| Post Lockdown | 2 |
+| Post Powerhouse | 2 |
+| Paint Prodigy | 2 |
+| Post Fade Phenom | 2 |
+
+### Center / Big Man Heights (6'10–7'3)
+
+| Badge | Tier |
+|-------|------|
+| Paint Patroller | 1 |
+| Pogo Stick | 1 |
+| Rise Up | 1 |
+| Posterizer | 1 (6'10) / 2 (6'11+) |
+| Interceptor | 1 (6'10–7'0) / 2 (7'1+) |
+| Rebound Chaser | 1 |
+| Boxout Beast | 1 |
+| Break Starter | 1 |
+| Brick Wall | 1 |
+| Post-Up Poet | 1 |
+| Post Fade Phenom | 1 |
+| Post Powerhouse | 1 |
+| Paint Prodigy | 1 |
+| Physical Finisher | 1 |
+| Bail Out | 1 |
+| Unpluckable | 1 |
+| Versatile Visionary | 1 |
+| Hook Specialist | 2 (6'10–7'0) / 1 (7'1+) |
+| Post Lockdown | 1 (6'11+) / 2 (6'10) |
+| Challenger | 2 (6'10–6'11) |
+| Handles For Days | 2 (6'10–7'0) |
+| Glove | 2 (6'10–7'0) |
+| Lightning Launch | 2 (6'10–6'11) |
+| Aerial Wizard | 2 |
+| Float Game | 2 |
+| Layup Mixmaster | 2 (6'10–6'11) |
+| Dimer | 2 |
+| Off-Ball Pest | 2 |
+| Immovable Enforcer | 2 |
+| High-Flying Denier | 2 |
+
+---
+
 ## Overall Meta Tier List
 
 ### S Tier (Must-Have on Any Build That Can Get Them)
