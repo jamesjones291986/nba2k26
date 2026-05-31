@@ -134,3 +134,78 @@
 4. **Beluba** is the dominant upper release — maximizes green window in nearly every combo
 5. **Kavi's testing**: All 367 bases tested for 6'5-6'9 on HoF, 90 3PT, silver badges, pure Beluba. Top 3: Quentin Grimes, Ray Allen, Carmelo Anthony
 6. **Post-patch rhythm**: Still viable but requires tighter timing. Button shooting was unaffected by Patch 2.0
+
+---
+
+## Rhythm Shooting — Rushed Shot Fix & Best Practices
+
+### Why You're Getting "Rushed" on Rhythm
+
+The #1 button shooting jumpshots (Ray Allen max speed for wings, Jonathan Isaac max speed for bigs) are **optimized for button shooting**. Using them with rhythm shooting often produces rushed feedback because:
+
+1. **Max speed + rhythm input = compressed window.** Rhythm shooting reads your stick flick speed as part of the shot tempo. On a max speed base (~550ms), even a normal flick can push you past the green window into "rushed."
+2. **The dip/gather animation.** When catching the ball, your player gathers before shooting. If you initiate your rhythm flick during the dip (before the shot animation starts), the game reads it as rushed. **Fix: Hold LT/L2 BEFORE the catch** to trigger No-Dip and skip the gather.
+3. **Low stamina slows the animation.** When tired, your shot animation slows down but your muscle memory doesn't adjust. The game reads your normal-speed input as too early = rushed.
+4. **Post-Patch 2.0 tighter windows.** Rhythm saw a 14% make rate decrease. What used to be "slightly early but green" now registers as rushed.
+
+### Key Differences: Button vs Rhythm
+
+| Factor | Button Shooting | Rhythm Shooting |
+|--------|----------------|-----------------|
+| Speed setting | Max speed = fastest green window | Max speed = HARDER to time (stick speed adds to animation speed) |
+| Best speed | Max always | 3/4 or slower for forgiving timing |
+| Input | Press and release at visual cue | Stick flick speed controls tempo — smooth > fast |
+| Dip animation | Less impactful (timing starts on press) | Critical — dip delays shot start, causing rushed if you flick during it |
+| Stamina impact | Shot slows, you release late | Shot slows, your flick is too fast = rushed |
+
+### Rules for Rhythm Shooting
+
+1. **Use 3/4 speed or slower** — gives your stick input room to breathe
+2. **Hold LT/L2 before every catch** — No-Dip eliminates the gather that causes rushed
+3. **Smooth push, not quick flick** — think "guide the stick up" not "snap it"
+4. **Don't shoot at 1 adrenaline bar** — the slowdown creates a timing mismatch
+5. **Use rhythm-specific jumpshots** — the button shooting #1 picks are NOT the same as rhythm #1 picks
+
+### Updated Rhythm Recommendations — 6'5"–6'9" (Post-Patch)
+
+| # | Base | Upper 1 | Upper 2 | Blend | Speed | Cue | Notes |
+|---|------|---------|---------|-------|-------|-----|-------|
+| 1 | **Clyde Drexler** | Beluba | Beluba | 50/50 | **3/4** | Right Next to Push | Most forgiving for rhythm — slower speed = no rushed |
+| 2 | **Scottie Pippen** | Beluba | Beluba | 50/50 | Max | 2-3 ticks into Push | Best catch-and-shoot rhythm; use No-Dip |
+| 3 | **J.R. Smith** | Beluba | Beluba | 50/50 | Max | 8 ticks into Push | EASIEST to time — very wide window between Push and Release |
+| 4 | **Ray Allen** | Dejounte Murray | Quentin Grimes | 65/35 | Max | 8 ticks into Push | Updated release combo; later cue avoids rushed |
+| 5 | **Carmelo Anthony** | Beluba | Oscar Robertson | 60/40 | Max | Slightly Above Mid-Push and Release | Best off-dribble rhythm |
+| 6 | **Quentin Grimes** | Brandon Ingram | Brandon Ingram | 50/50 | Max | Full Release | Pure Brandon Ingram release; wait for full release to avoid rushed |
+| 7 | **Kobe Bryant** | Beluba | Oscar Robertson | 40/60 | Max | Between Push and Release | Starter 4 only |
+
+### Updated Rhythm Recommendations — 6'10"+ (Post-Patch)
+
+| # | Base | Upper 1 | Upper 2 | Blend | Speed | Cue | Notes |
+|---|------|---------|---------|-------|-------|-----|-------|
+| 1 | **PJ Tucker** | Giannis | Brook Lopez | 50/50 | **2.5** | Close to End of Release | MOST FORGIVING — slow speed eliminates rushed entirely |
+| 2 | **Kevin Durant** | LaMarcus Aldridge | Dirk Nowitzki | — | **3/4** | Slightly Past Push | Slower speed for rhythm; hard to contest |
+| 3 | **Jonathan Isaac** | Beluba | Charles Bassey | 65/35 | Max | 12-14 ticks (Between Push and Release) | Still viable at max but MUST use No-Dip on catches |
+| 4 | **PJ Tucker** | Beluba | LaMarcus Aldridge | 50/50 | Max | 'R' in Release or Full Release | Wait for late cue to avoid rushed |
+| 5 | **PJ Tucker** | Jeremiah Robinson-Earl | Bam Adebayo | 72/28 | Max | Release | New combo; smooth release |
+| 6 | **MPJ** | Dirk Nowitzki | LaMarcus Aldridge | 20/80 | Max | 1-2 ticks into Push | Early cue — only for experienced rhythm shooters |
+| 7 | **Jonathan Isaac** | LaMarcus Aldridge | Charles Bassey | 65/35 | Max | 12-14 ticks | Alt release; works with low 3PT (69+) |
+
+### Dribble Pull-Ups for Rhythm
+
+| Pull-Up | Height | Requirement | Notes |
+|---------|--------|-------------|-------|
+| **Nikola Jokic** | Any | — | THE rhythm dribble pull-up; specifically designed for tempo shooting |
+| **Pro 2** | Any | — | Most popular; good left/right fades |
+| **Bam Adebayo** | 6'10"+ | 81 Mid/3PT | Best for big builds |
+| **Normal 2** | 6'10"+ | — | No requirements; essential for tall builds without 87 Mid |
+| **Kevin Durant** | 6'8"+ | 87 Mid/3PT | Best for taller builds who can meet the requirement |
+
+### If You're Still Getting Rushed
+
+Checklist:
+- [ ] Are you using a max speed base? → Try 3/4 or slower
+- [ ] Are you holding LT/L2 before the catch? → No-Dip is mandatory for rhythm catch-and-shoot
+- [ ] Is your adrenaline at 1 bar? → Don't shoot tired
+- [ ] Are you flicking the stick or pushing it smoothly? → Smooth push, not snap
+- [ ] Is your visual cue set to "Push"? → Try moving it toward "Release" for a later timing point
+- [ ] Did a recent patch change things? → Check patch notes; rhythm has been adjusted multiple times
