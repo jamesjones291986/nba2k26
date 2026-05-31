@@ -209,3 +209,126 @@ Checklist:
 - [ ] Are you flicking the stick or pushing it smoothly? → Smooth push, not snap
 - [ ] Is your visual cue set to "Push"? → Try moving it toward "Release" for a later timing point
 - [ ] Did a recent patch change things? → Check patch notes; rhythm has been adjusted multiple times
+
+---
+
+## Green Window Science (nba2klab Data)
+
+### How the Green Window Works
+
+- Green window = ~50-60ms of time where your release can produce a green
+- All jumpshots fall between **550ms–750ms** total release time
+- The window forms a bell curve — center has highest make %, edges are RNG
+- You can perfectly time a shot and still miss (RNG on edges)
+- Badges don't widen the window but **raise the make % on the edges**
+
+### What INCREASES Your Green Percentage
+
+| Factor | Effect | How |
+|--------|--------|-----|
+| Shot Meter OFF | Confirmed green window boost | Settings > Customize HUD > Shot Meter Visibility: No |
+| Set Shot Specialist badge | Dramatically widens effective green window | Higher tiers = bigger boost (HoF is massive) |
+| Hot Zones | Minor boost to RNG within window | Shoot from your hot spots |
+| Jumpshot Boosts (VC) | ~5% RNG increase | Buy from store before games |
+| Higher 3PT/Mid rating | Larger base green window | 99 3PT = maximum window size |
+| Full stamina / 2-3 adrenaline bars | Normal shot speed (no mismatch) | Manage energy, don't shoot gassed |
+
+### What DOES NOT Affect Your Green Window
+
+| Factor | Reality |
+|--------|---------|
+| Distance from basket | Same release speed from mid-range or logo |
+| Being contested | Does NOT change shot speed — only shrinks make % |
+| Shot type (in 2K26) | Catch-and-shoot, standstill, off-dribble all have same input lag now |
+
+### Rhythm-Specific: The Two Timing Components
+
+Rhythm shooting has TWO separate timing elements (per nba2klab):
+
+1. **Push Timing (540-570ms)** — when you push the stick up relative to the shot start. This is your actual release timing (same concept as button).
+2. **Tempo (35-60ms)** — the speed/smoothness of your stick motion. This is UNIQUE to rhythm and determines if you get "rushed" or "slow."
+
+**Rushed = your tempo is under 35ms** (you flicked too fast)
+**Slow = your tempo is over 60ms** (you pushed too slowly)
+**Green zone = 35-60ms tempo + correct push timing**
+
+This is why you can have "correct" timing but still get rushed — your push timing was right but your stick motion was too fast (tempo under 35ms).
+
+---
+
+## Optimal Settings for Rhythm Shooting
+
+### Controller Settings
+
+| Setting | Recommended | Why |
+|---------|-------------|-----|
+| Shot Timing | ON (required online) | — |
+| Shot Timing Visual Cue | **Push** (or between Push and Release) | Push gives earlier feedback; match to your jumpshot's cue |
+| Pro Stick Orientation | **Absolute** | Consistent stick direction regardless of court position |
+| Pro Stick Function | **Default** | Keeps hop steps, floaters, scoops available |
+| Passive Dribble Hand Switches | **OFF** | Prevents random hand switches that can trigger unintended shots |
+| Vibration | **OFF** | Eliminates micro-input lag from rumble motors |
+
+### HUD Settings
+
+| Setting | Recommended | Why |
+|---------|-------------|-----|
+| Shot Meter (Shots) | **OFF** | Confirmed green window boost; shoot by feel |
+| Shot Meter (Layups/Dunks) | ON | Different timing, keep visual aid |
+| Shot Feedback | **All Shots** or Simple | See contest %, timing, and whether you were rushed/slow |
+| Perfect Release Animation | Flame or Party Time, Above Player | Clear visual confirmation without distraction |
+
+### The No-Dip Quick Shot Technique (Critical for Rhythm)
+
+**Hold L2/LT BEFORE receiving the pass**, then immediately shoot.
+
+This does three things:
+1. Eliminates the gather/dip animation that adds ~100-150ms before your shot starts
+2. Makes your shot come out faster (harder to contest)
+3. Removes the timing mismatch where you flick during the dip and get "rushed"
+
+This is the single biggest fix for rushed shots on catch-and-shoot rhythm. The game added this as a specific feature in 2K26 — it's called "No-Dip Catch-and-Shoot" in the patch notes.
+
+---
+
+## Practice Routine for Rhythm Consistency
+
+### Step 1: Learn Your Tempo (nba2klab Rhythm Practice Tool)
+
+Go to nba2klab.com/rhythm-practice-tool and connect your controller. Practice hitting the 35-60ms tempo window repeatedly until it's muscle memory. This teaches you the correct stick speed independent of any jumpshot.
+
+### Step 2: MyCourt Drill
+
+1. Set up in MyCourt with shot feedback ON
+2. Catch and shoot from the corner (hold LT before catch)
+3. Watch feedback: if "Rushed" → slow your stick push. If "Slow" → speed it up slightly
+4. Aim for 10 greens in a row before moving to the next spot
+5. Repeat from wing, top of key, opposite corner
+
+### Step 3: Stamina Awareness Drill
+
+1. Sprint baseline to baseline 3 times
+2. Immediately catch and shoot
+3. Notice how your timing needs to adjust when tired
+4. Practice holding the stick slightly longer when stamina is low
+
+### Step 4: Game Situations
+
+1. Play offline on All-Star difficulty (matches online gameplay speed)
+2. Only take catch-and-shoot 3s with No-Dip technique
+3. Track your green % — aim for 70%+ before going online
+
+---
+
+## Summary: The Complete Anti-Rush Checklist
+
+1. ✅ Use rhythm-specific jumpshots (3/4 speed or slower bases)
+2. ✅ Shot meter OFF (green window boost)
+3. ✅ Hold LT/L2 before every catch (No-Dip)
+4. ✅ Smooth stick push, not a snap (aim for 35-60ms tempo)
+5. ✅ Don't shoot at 1 adrenaline bar
+6. ✅ Visual cue set to match your jumpshot's recommended cue
+7. ✅ Vibration OFF on controller
+8. ✅ Pro Stick Orientation: Absolute
+9. ✅ Practice with nba2klab rhythm tool to nail the tempo
+10. ✅ Set Shot Specialist at HoF+ (dramatically increases green window edges)
