@@ -13,3 +13,6 @@
 ## Up Next
 - Update if game patches change badge/attribute thresholds
 - Add new builds as meta evolves
+
+## Future Ideas
+- NBA 2K27 — full research and build optimizer when it drops
